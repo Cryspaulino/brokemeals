@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Ribeye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Jost:ital,wght@0,100..900;1,100..900&family=Ribeye&display=swap');
+
+.navbar{
+display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+    background-color: #472c2c;
+    padding: 15px;
+}
