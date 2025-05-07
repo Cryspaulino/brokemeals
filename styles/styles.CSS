@@ -13,6 +13,17 @@
 
 
 /* Header */
+:root {
+    /* change the values below to your colors from your palette */
+    --primary-color: #FFA115;
+    --secondary-color: #FF5252;
+    --accent1-color: #32ACC7;
+    --accent2-color: #2D2033;
+    --background-color: #C4BEBB;
+}  
+
+
+/* Header */
 .navbar {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
