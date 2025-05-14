@@ -113,3 +113,12 @@
 body{
     background-color: #ebebeb;
 }
+
+/* .containertwo{
+    border: #2D2033;
+}
+*/
+
+.container img{
+    width: 200px;
+}
