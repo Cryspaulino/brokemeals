@@ -10,7 +10,8 @@ function Recipes() {
   // The "setRecipes" function will be used to update the state of the "recipes" array.
   const [recipes, setRecipes] = useState([]);
   const [selectedTag, setSelectedTag] = useState(null);
-const tags = [
+  // Holds a list of tags attached to different recipes.
+  const tags = [
   "Breakfast",
   "Budget-Friendly",
   "One-Pot",
@@ -35,19 +36,37 @@ const tags = [
   "No-Cook"
 ];
 
+  // Initializes the "selectedTags" array to be empty. It will hold na array of recipe objects that we fetch from Firebase.
+  // The "setSelectedTags" function will be used to update the state of the "selectedTags" array.
+  const [selectedTags, setSelectedTags] = useState([]);
 
-const [selectedTags, setSelectedTags] = useState([]);
-
+  // This function adds a selected tag to the SelectedTags list.
+  // This is kind of weird, so I'll explain line by line.
+  // PARAM tag = the tag that was just clicked by the user
 function addTagToList(tag) {
+  // Prev means "previous value". It means the CURRENT/PREVIOUS state of SelectedTags.
+  // it says, "This is what the tag list looks like RIGHT NOW"
   setSelectedTags((prev) =>
+    // ? and : are inline if/else statements. 
+    // prev.includes(tag) ? - If the tag passed into the function is in the selectedTags list...
+    // prev.filter((t => t !== tag)) - .filter makes a new array of items that EXCLUDES the tag that was just clicked. t represents each tag in the prev array.
+    // This basically says, "for each tag in prev, add the tag to a new array EXCEPT the one we selected."
+    // [...prev, tag] - This is an array spread. It will create a new array with all prev tags plus the one we just selected.
     prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+    // TL;DR: When we call the addTagToList function, we pass it the tag we just clicked on. Then we check if that tag is already in the selectedTags list. If it is, then a new array is created using .filter of just the tags that the user selected, minus the one they just clicked (letting users toggle a tag on or off). In essence, the tag is removed from the selectedTags list. Otherwise, the tag is ADDED to the selectedTags list.
   );
 }
-
-
+  // This function clears the SelectedTag list.
   function clearTagList() {
     setSelectedTags([]);
   }
+
+  // Initializes the constant Filtered Recipes.
+  const filteredRecipes = selectedTags.length > 0
+  ? recipes.filter((recipe) =>
+      selectedTags.every((tag) => recipe.tags?.includes(tag))
+    )
+  : recipes;
 
   // Runs once after the component "mounts" (i.e., is added to the DOM because of the empty array above). 
   // Below is where we fetch the data.
@@ -81,11 +100,6 @@ function addTagToList(tag) {
       }
     });
   }, []);
-const filteredRecipes = selectedTags.length > 0
-  ? recipes.filter((recipe) =>
-      selectedTags.every((tag) => recipe.tags?.includes(tag))
-    )
-  : recipes;
 
   return (
     <div>
@@ -95,12 +109,14 @@ const filteredRecipes = selectedTags.length > 0
           {tags.map((tag) => (
             <button
               key={tag}
+              // When clicked, we call the addTagToList function.
               onClick={() => addTagToList(tag)}
             >
               {tag}
             </button>
           ))}
         {selectedTags.length > 0 && (
+          // When clicked, we call the clearTagList function.
           <button onClick={clearTagList} className="clear-button">
             Clear Filters
           </button>
