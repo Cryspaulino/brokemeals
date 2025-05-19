@@ -1,7 +1,21 @@
+import {signInWithPopup} from 'firebase/auth';
+import { Link, useNavigate } from "react-router-dom";
+import { auth, provider } from '../firebase/firebaseConfig';
 import React from 'react';
 import '../styles/styles.css';
 
 function Signin() {
+  const navigate = useNavigate();
+
+  const signInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+      navigate('/home'); // Redirect after successful sign-in
+    } catch (error) {
+      console.error("Sign-in error:", error);
+    }
+  };
+
   return (
     <>
       <h3>
@@ -9,12 +23,10 @@ function Signin() {
         Click the button below to get started!
       </h3>
 
-      {/* our button is wrapped in a link to the Recipes.jsx page */}
-      <Link to="/">
-        <button className="get-started">Get Started</button>
-      </Link>
+      <button className="get-started" onClick={signInWithGoogle}>Get Started</button>
     </>
   );
 }
 
-export default Home;
+
+export default Signin;

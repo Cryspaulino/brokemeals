@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getDatabase } from "firebase/database";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyAOY_nwvwxHvvH-TFlDelfII7YuPkRD8ik",
@@ -14,6 +16,10 @@ const firebaseConfig = {
 
 // Initialize Firebase app
 const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase Authentication and Google Sign-In
+export const auth = getAuth(app);
+export const provider = new GoogleAuthProvider();
 
 // Export Realtime Database instance
 export const database = getDatabase(app);
