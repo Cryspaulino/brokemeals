@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Goals from './pages/Goals';
 import Recipes from './pages/Recipes';
 import Layout from './components/Layout';
+import Signin from './pages/Signin';
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
           <Route index element={<Home />} /> {/* Default route */}
           <Route path="goals" element={<Goals />} />
           <Route path="recipes" element={<Recipes />} />
+          <Route path="signin" element={<Signin />} />
         </Route>
       </Routes>
     </Router>
