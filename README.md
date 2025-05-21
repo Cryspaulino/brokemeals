@@ -6,15 +6,18 @@
 
 ## Architecture - 
 Frameworks: Node.js/React
+
 Programming Languages: HTML/CSS/JavaScript
+
 Data Storage: Firebase Realtime Database
+
 Development Tools: VS Code, GitHub Project & Public Repositories
 
 ## Software Features - 
-* [] Allow users to filter the recipe guide based on ingredients or weight/fitness goals.
-* [] Users will be able to search for recipes by tags
-* [] Allow users to login and view any of their "saved" recipes.
-* [] End-game feature, users will be able to add recipes to the database.
+* [ ] Allow users to filter the recipe guide based on ingredients or weight/fitness goals.
+* [ ] Users will be able to search for recipes by tags
+* [ ] Allow users to login and view any of their "saved" recipes.
+* [ ] End-game feature, users will be able to add recipes to the database.
 
 ## Team Communication - We will communicate through a chat hosted on Microsoft Teams. During class we will work together using LiveShare on VSCode. When we are apart we will make assignments on Teams/GitHub for each member to complete. We have also been meeting outside of class to collaborate.
 
