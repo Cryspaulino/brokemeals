@@ -20,7 +20,7 @@
     text-align: center;
     background-color: #f7f7f7;
     padding: 15px;
-    height: 380px;
+    height: 350px;
     align-items: center;
 }
 /* logo */
@@ -55,12 +55,15 @@
     margin-bottom: 0px;
     margin-right: 70px;
 }
+
 /* navigation buttons */
+/* home button */
 .nav_home{
     grid-column: 2/3;
     font-family: 'Chewy';
     font-size: 40px;
     color: #883333;
+    height: 53px;
     text-decoration: none;
     text-shadow: 3px 3px 3px #ffffff;
     background: linear-gradient(to bottom, #e28d0c, #FF5252);
@@ -68,11 +71,13 @@
     border: #992121 solid 2px;
     margin-left: 140px;
 }
+/* goals button */
 .nav_goals{
     grid-column: 3/4;
     font-family: 'Chewy';
     font-size: 40px;
     color: #883333;
+    height: 53px;
     text-decoration: none;
     text-shadow: 3px 3px 3px #ffffff;
     background: linear-gradient(to bottom, #e28d0c, #FF5252);
@@ -80,10 +85,12 @@
     border: #992121 solid 2px;
     margin-left: auto;
 }
+/* recipes button */
 .nav_recipes{
     grid-column: 4/5;
     font-family: 'Chewy';
-    font-size: 40px;
+    font-size: 35px;
+    height: 53px;
     color: #883333;
     text-decoration: none;
     text-shadow: 3px 3px 3px #ffffff;
@@ -92,24 +99,41 @@
     border: #992121 solid 2px;
     margin-left: auto;
 }
-.nav_home:hover, .nav_goals:hover, .nav_recipes:hover{
+/* home and goals button hover */
+.nav_home:hover, .nav_goals:hover{
     font-size: 42px;
     color: #752b2b;
     text-shadow: 5px 5px 5px #ffffff;
 }
+/* recipes button hover */
+.nav_recipes:hover{
+    font-size: 37px;
+    color: #752b2b;
+    text-shadow: 5px 5px 5px #ffffff;
+}
+/* sign in button */
 .sign_in{
     grid-column: 5/6;
     font-family: 'Chewy';
+    height: 43px;
     font-size: 30px;
     color: #0a4956;
     text-decoration: none;
     text-shadow: 3px 3px 3px #ffffff;
-    background: #32ACC7;
+    background: #80ccdd;
     width: 150px;
     padding: 8px;
-    border: #0a4956 solid 1px;
+    border: #0a4956 solid 3px;
     margin-left: auto;
+    margin-right: auto;
     border-radius: 130px;
+}
+/* sign in button hover */
+.sign_in:hover{
+
+    font-size: 31px;
+    color: #0a4956;
+    text-shadow: 5px 5px 5px #ffffff;
 }
 
 /* Body */
@@ -117,9 +141,68 @@ body{
     background-color: #ebebeb;
 }
 
+/* Home Page */
+.paragraph-box{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr, 100px;
+    background-color: #76c7d9;
+    border: #ffffff solid 3px;
+    border-radius: 50px;
+    margin: 80px;
+}
+/* Intro Paragraph */
+.intro-paragraph{
+    grid-column: 1/4;
+    padding: 40px;
+    font-family: 'Chewy';
+    font-size: 50px;
+    color: #883333;
+    text-shadow: 3px 3px 3px #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+/* Get Started Button */
 .get-started{
     padding: 15px;
+    font-family: 'Chewy';
+    font-size: 60px;
+    color: #883333;
+    text-decoration: none;
+    text-shadow: 3px 3px 3px #ffffff;
+    background: linear-gradient(to bottom, #e28d0c, #FF5252);
+    border: #992121 solid 3px;
+    border-radius: 50px;
+    height: 125px;
 }
-/* .tag-buttons{
-    background-color: ;
-} */
+.get-started-link{
+    grid-column: 2/3;
+    grid-row:2/3;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.get-started:hover{
+    font-size: 62px;
+    color: #752b2b;
+    text-shadow: 5px 5px 5px #ffffff;
+}
+
+/* Saved Recipes (NOT SIGNED IN) */
+.not-logged-in{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+.not-logged-in-message{
+    padding: 80px;
+    font-family: 'Chewy';
+    font-size: 50px;
+    color: #883333;
+    text-shadow: 3px 3px 3px #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #76c7d9;
+    border: #ffffff solid 3px;
+    border-radius: 50px;
+}

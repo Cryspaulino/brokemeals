@@ -7,10 +7,11 @@ import '../styles/styles.css';
 function Signin() {
   const navigate = useNavigate();
 
+// Google signin function
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, provider);
-      navigate('/home'); // Redirect after successful sign-in
+      navigate('/'); // Redirect after successful sign-in
     } catch (error) {
       console.error("Sign-in error:", error);
     }
@@ -19,11 +20,10 @@ function Signin() {
   return (
     <>
       <h3>
-        We are a group of college students that want to help you get through college while eating healthy and saving money!
-        Click the button below to get started!
+        Sign in with google
       </h3>
 
-      <button className="get-started" onClick={signInWithGoogle}>Get Started</button>
+      <button className="get-started" onClick={signInWithGoogle}>Sign In</button>
     </>
   );
 }

@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { database } from "../firebase/firebaseConfig";
 // Import methods from Firebase to reference a path and listen for any changes we make to the databse.
 import { ref, onValue } from "firebase/database";
+// Import methods from Firebase to handle user authentication
+import {getAuth, onAuthStateChanged} from 'firebase/auth';
 
 // Defines the React compnent for displaying recipes.
 function Recipes() {
@@ -10,6 +12,8 @@ function Recipes() {
   // The "setRecipes" function will be used to update the state of the "recipes" array.
   const [recipes, setRecipes] = useState([]);
   const [selectedTag, setSelectedTag] = useState(null);
+  // state to track the current user
+  const [user, setUser] = useState(null);
   // Holds a list of tags attached to different recipes.
   const tags = [
   "Breakfast",
@@ -68,6 +72,17 @@ function addTagToList(tag) {
     )
   : recipes;
 
+  // Creates auth and unsubscribe variables using firebase methods
+  // This allows us to track the current user
+    useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   // Runs once after the component "mounts" (i.e., is added to the DOM because of the empty array above). 
   // Below is where we fetch the data.
   useEffect(() => {
@@ -100,6 +115,16 @@ function addTagToList(tag) {
       }
     });
   }, []);
+
+  // Page if user isn't logged in
+  if (!user) {
+    return (
+      <div className= "not-logged-in">
+        <h1 className= "not-logged-in-message">🍲 Please log in to view your saved recipes. 🍲</h1>
+      </div>
+    );
+  }
+
 
   return (
     <div>
