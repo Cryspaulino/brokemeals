@@ -14,7 +14,8 @@ function Layout() {
           <h1 className="title">Welcome to Broke Meals!</h1>
           <Link className="nav_home" to="/">Home</Link>
           <Link className="nav_goals" to="/goals">Goals</Link>
-          <Link className="nav_recipes" to="/recipes">Recipes</Link>
+          <Link className="nav_recipes" to="/recipes">Saved Recipes</Link>
+          <Link className="sign_in" to="/Signin">Sign In</Link>
         </nav>
       </header>
 
