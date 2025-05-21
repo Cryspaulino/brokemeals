@@ -1,5 +1,6 @@
 // Import React and Firebase
 import React, { useEffect, useState } from "react";
+import Dropdown from 'react-bootstrap/Dropdown';
 import { database } from "../firebase/firebaseConfig";
 // Import methods from Firebase to reference a path and listen for any changes we make to the databse.
 import { ref, onValue } from "firebase/database";
@@ -106,7 +107,7 @@ function addTagToList(tag) {
       <h1>🍲 All Recipes</h1>
 
         <div className="tag-buttons">
-          {tags.map((tag) => (
+          {/* {tags.map((tag) => (
             <button
               key={tag}
               // When clicked, we call the addTagToList function.
@@ -120,8 +121,32 @@ function addTagToList(tag) {
           <button onClick={clearTagList} className="clear-button">
             Clear Filters
           </button>
-)}
+)} */}
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="tag-dropdown">
+              {selectedTag || "Filter"}
+            </Dropdown.Toggle>
 
+            <Dropdown.Menu>
+              {tags.map((tag) => (
+                <Dropdown.Item
+                key={tag}
+                onClick={() => {
+                  setSelectedTag(tag);
+                  setSelectedTags([tag]);  //change later
+                }}
+              >
+                {tag}
+              </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
+          {selectedTags.length > 0 && (
+            // When clicked, we call the clearTagList function.
+            <button onClick={clearTagList} className="clear-button">
+              Clear Filters
+            </button>
+          )}
         </div>
         
 
