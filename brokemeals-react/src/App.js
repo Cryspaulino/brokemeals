@@ -6,6 +6,7 @@ import Goals from './pages/Goals';
 import Recipes from './pages/Recipes';
 import Layout from './components/Layout';
 import Signin from './pages/Signin';
+import Signup from './pages/Signup';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="goals" element={<Goals />} />
           <Route path="recipes" element={<Recipes />} />
           <Route path="signin" element={<Signin />} />
+          <Route path = "signup" element={<Signup />} />
         </Route>
       </Routes>
     </Router>

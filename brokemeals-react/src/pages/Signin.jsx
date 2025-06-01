@@ -1,32 +1,137 @@
-import {signInWithPopup} from 'firebase/auth';
+import {
+  signInWithPopup,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+} from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, provider } from '../firebase/firebaseConfig';
-import React from 'react';
-import '../styles/styles.css';
+import { auth, provider, database } from "../firebase/firebaseConfig";
+import React, { useState } from "react";
+import { ref, set } from "firebase/database";
+import "../styles/styles.css";
 
 function Signin() {
+  // Define the const's for email and password logins, set to empty so the boxes do not autopopulate.
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // React hook that allows us to change which page we are directed to upon function completion.
   const navigate = useNavigate();
 
-// Google signin function
+  // Google signin function
   const signInWithGoogle = async () => {
     try {
-      await signInWithPopup(auth, provider);
-      navigate('/'); // Redirect after successful sign-in
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      saveUserToDB(user.uid, user.email);
+      navigate("/"); // Redirect after successful sign-in
     } catch (error) {
-      console.error("Sign-in error:", error);
+      console.error("Google Sign-in error:", error);
+    }
+  };
+
+  // Email/password sign-in function
+  const signInWithEmail = async (e) => {
+    e.preventDefault(); // Prevents the page reload on form submission.
+    try {
+      // Authenticate the user with email and password using firebase.
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      // Extract user data from the result.
+      const user = userCredential.user;
+      // Save the user data from the result.
+      saveUserToDB(user.uid, user.email);
+      // Notify the user and the console then nav to the homepage.
+      console.log("User signed in.");
+      alert("You've been signed in.");
+      navigate("/");
+    } catch (error) { // Display an alert and log the error if a sign-in fails.
+      console.error("Email Sign-in error:", error.message);
+      alert("Failed to sign in. Please check your credentials.");
+    }
+  };
+
+  // Forgot Password Functionality
+  const handleForgotPassword = async () => {
+    // Check if the user has entered an email address yet.
+    if (!email) {
+      alert("Please enter your email first.");
+      return;
+    }
+    try {
+      // Send a password reset email through Firebase.
+      await sendPasswordResetEmail(auth, email);
+      alert("Password reset email sent!");
+    } catch (error) {
+      // Log and alert if the password reset fails.
+      console.error("Password reset error:", error.message);
+      alert("Failed to send reset email. Check the email address.");
+    }
+  };
+
+  // Save User info to RealtimeDatabase
+  const saveUserToDB = async (uid, email) => {
+    try {
+      // Use Firebase's 'set' to write user data under their unique UID.
+      await set(ref(database, "users/" + uid), {
+        email: email,
+        createdAt: new Date().toISOString(), // ISO timestamp for creation time in our database.
+      });
+      // Log the success to the console.
+      console.log("User saved to database successfully.");
+    } catch (error) {
+      // Log any errors that occur while writing to the database.
+      console.error("Error saving user to database:", error.message);
     }
   };
 
   return (
-    <>
-      <h3>
-        Sign in with google
-      </h3>
+    <div className="signin-container">
+      <h2>Sign In</h2>
 
-      <button className="get-started" onClick={signInWithGoogle}>Sign In</button>
-    </>
+      {/* Email/Password Sign In */}
+      <form onSubmit={signInWithEmail}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <br />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <br />
+        <button type="submit" className="get-started">
+          Sign In with Email
+        </button>
+      </form>
+
+      <button onClick={handleForgotPassword} className="forgot-link">
+        Forgot Password?
+      </button>
+
+      <hr />
+      <h3>Sign in with google</h3>
+
+      <button className="get-started" onClick={signInWithGoogle}>
+        Sign In with Google
+      </button>
+
+      <hr />
+      <h3>Sign up for a new account using email and password</h3>
+      <button className="get-started" onClick={() => navigate("/signup")}>
+        Sign Up Here
+      </button>
+    </div>
   );
 }
-
 
 export default Signin;
