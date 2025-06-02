@@ -133,21 +133,7 @@ function addTagToList(tag) {
       <h1>🍲 All Recipes</h1>
 
         <div className="tag-buttons">
-          {/* {tags.map((tag) => (
-            <button
-              key={tag}
-              // When clicked, we call the addTagToList function.
-              onClick={() => addTagToList(tag)}
-            >
-              {tag}
-            </button>
-          ))}
-        {selectedTags.length > 0 && (
-          // When clicked, we call the clearTagList function.
-          <button onClick={clearTagList} className="clear-button">
-            Clear Filters
-          </button>
-)} */}
+          
           <Dropdown>
             <Dropdown.Toggle variant="success" id="tag-dropdown">
               {selectedTag || "Filter"}
