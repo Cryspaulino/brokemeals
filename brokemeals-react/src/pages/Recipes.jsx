@@ -6,6 +6,7 @@ import { database } from "../firebase/firebaseConfig";
 import { ref, onValue } from "firebase/database";
 // Import methods from Firebase to handle user authentication
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Defines the React compnent for displaying recipes.
 function Recipes() {
