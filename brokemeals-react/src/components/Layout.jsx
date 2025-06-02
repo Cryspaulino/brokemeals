@@ -10,7 +10,9 @@ function Layout() {
       <header>
         <nav className="navbar">
           {/* logo and nav links */}
-          <img className="logo" src="/images/logo.jpg" alt="Broke Meals Logo" />
+          <a href="/">
+            <img className="logo" src="/images/logo.jpg" alt="Broke Meals Logo" />
+          </a>
           <h1 className="title">Welcome to Broke Meals!</h1>
           <Link className="nav_home" to="/">Home</Link>
           <Link className="nav_goals" to="/goals">Goals</Link>
