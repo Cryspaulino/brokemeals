@@ -148,12 +148,10 @@ function addTagToList(tag) {
               {tags.map((tag) => (
                 <Dropdown.Item
                 key={tag}
-                onClick={() => {
-                  setSelectedTag(tag);
-                  setSelectedTags([tag]);  //change later
-                }}
+                onClick={() => addTagToList(tag)}
+                active = {selectedTags.includes(tag)}
               >
-                {tag}
+                {selectedTags.includes(tag) ? '• ' : ''}{tag}
               </Dropdown.Item>
               ))}
             </Dropdown.Menu>
