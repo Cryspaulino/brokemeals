@@ -7,6 +7,9 @@ import { ref, onValue } from "firebase/database";
 // Import methods from Firebase to handle user authentication
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// Import the navigation hook, this allows us to reroute the user depending on what recipe they select.
+import { useNavigate } from "react-router-dom";
+
 
 // Defines the React compnent for displaying recipes.
 function Recipes() {
@@ -16,6 +19,8 @@ function Recipes() {
   const [selectedTag, setSelectedTag] = useState(null);
   // state to track the current user
   const [user, setUser] = useState(null);
+  // Navigate function to allow for rerouting :)
+  const navigate = useNavigate();
   // Holds a list of tags attached to different recipes.
   const tags = [
   "Breakfast",
@@ -172,7 +177,14 @@ function addTagToList(tag) {
           // I've added "className" = "recipe-card" to each recipe div for styling purposes. All data is shown for now.
           // Joyce can style these cards.
           // Below is also making calls to our databse to get the name, price, ingredients, instructions, and tags.
-          <div key={recipe.id} className="recipe-card">
+
+          // Added onClick functionality, users will be rerouted to the SingleRecipe page on click.
+          <div 
+            key={recipe.id}
+            className="recipe-card"
+            onClick={() => navigate(`/recipe?id=${recipe.id}`)}
+            style={{ cursor: 'pointer' }}
+           >
             <h2>{recipe.name}</h2>
             <p><strong>Price:</strong> {recipe.price}</p>
 

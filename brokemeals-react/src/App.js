@@ -7,6 +7,7 @@ import Recipes from './pages/Recipes';
 import Layout from './components/Layout';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
+import SingleRecipe from './pages/SingleRecipe';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="recipes" element={<Recipes />} />
           <Route path="signin" element={<Signin />} />
           <Route path = "signup" element={<Signup />} />
+          <Route path = "/recipe" element={<SingleRecipe />} />
         </Route>
       </Routes>
     </Router>
