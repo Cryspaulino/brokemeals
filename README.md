@@ -27,7 +27,7 @@ Development Tools: VS Code, GitHub Project & Public Repositories
 |Responsibility                      |Team Member(s)              |
 |------------------------------------|----------------------------|
 |Conducting Meetings                 |   Everyone                |
-|Maintaining Team Assignment List    | Self-Assigning      |
+|Maintaining Team Assignment List    | Levi Nelson   |
 |Ensuring GitHub is Working          | Levi Nelson                  |
 |Maintaining Documentation           |  Rhett Poole         |
 |Create & Display Presentations      |  Everyone             |
