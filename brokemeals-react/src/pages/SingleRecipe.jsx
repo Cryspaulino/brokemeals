@@ -90,7 +90,7 @@ import { database } from '../firebase/firebaseConfig';
                 </div>
                 {/* Return to Recipes page. */}
                 <div class='backtorecipes'>
-                    <a href="./pages/Recipes">Go back to all recipes</a>
+                    <a href="./Recipes">Go back to all recipes</a>
                 </div>
             </main>
         );
