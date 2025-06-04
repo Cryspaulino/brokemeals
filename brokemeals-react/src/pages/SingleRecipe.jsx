@@ -77,6 +77,7 @@ import { database } from '../firebase/firebaseConfig';
                     <h3>Instructions:</h3>
                     {/* <p>{recipe.instructions}</p> */}
                     <ul>
+                        {/* The instructions are returned as one single string. Here we split them up individually, and manually add the number to each line. */}
                         {recipe.instructions
                         .split(/\d+\.\s/) 
                         .filter(step => step.trim() !== "")
@@ -87,6 +88,7 @@ import { database } from '../firebase/firebaseConfig';
                         ))}
                     </ul>
                 </div>
+                {/* Return to Recipes page. */}
                 <div class='backtorecipes'>
                     <a href="./pages/Recipes">Go back to all recipes</a>
                 </div>
