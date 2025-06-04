@@ -75,7 +75,20 @@ import { database } from '../firebase/firebaseConfig';
 
                     {/* Instructions */}
                     <h3>Instructions:</h3>
-                    <p>{recipe.instructions}</p>
+                    {/* <p>{recipe.instructions}</p> */}
+                    <ul>
+                        {recipe.instructions
+                        .split(/\d+\.\s/) 
+                        .filter(step => step.trim() !== "")
+                        .map((step, index) => (
+                        <div key={index}>
+                        {index + 1}. {step.trim()}
+                    </div>
+                        ))}
+                    </ul>
+                </div>
+                <div class='backtorecipes'>
+                    <a href="./pages/Recipes">Go back to all recipes</a>
                 </div>
             </main>
         );

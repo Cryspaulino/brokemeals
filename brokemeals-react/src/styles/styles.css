@@ -115,7 +115,7 @@
 .sign_in{
     grid-column: 5/6;
     font-family: 'Chewy';
-    height: 43px;
+    /* height: 43px; */
     font-size: 30px;
     color: #0a4956;
     text-decoration: none;

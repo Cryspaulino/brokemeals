@@ -193,8 +193,8 @@ function addTagToList(tag) {
               ))}
             </ul>
 
-            <h4>Instructions:</h4>
-            <p>{recipe.instructions}</p>
+            {/* <h4>Instructions:</h4>
+            <p>{recipe.instructions}</p> */}
 
             <h4>Tags:</h4>
             <ul>
