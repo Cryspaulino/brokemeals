@@ -8,6 +8,7 @@ import Layout from './components/Layout';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import SingleRecipe from './pages/SingleRecipe';
+import Tutorial from './pages/Tutorial';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="signin" element={<Signin />} />
           <Route path = "signup" element={<Signup />} />
           <Route path = "/recipe" element={<SingleRecipe />} />
+          <Route path = "/tutorial" element={<Tutorial />} />
         </Route>
       </Routes>
     </Router>

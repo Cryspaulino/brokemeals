@@ -89,11 +89,11 @@ function Signin() {
 
   return (
     <div className="signin-container">
-      <h2>Sign In</h2>
-
+      <h1 className= "signin-title">Sign In</h1>
       {/* Email/Password Sign In */}
-      <form onSubmit={signInWithEmail}>
+      <form className = "signin-email-form" onSubmit={signInWithEmail}>
         <input
+          className = "email-input-box"
           type="email"
           placeholder="Email"
           value={email}
@@ -102,6 +102,7 @@ function Signin() {
         />
         <br />
         <input
+          className = "password-input-box"
           type="password"
           placeholder="Password"
           value={password}
@@ -109,26 +110,18 @@ function Signin() {
           required
         />
         <br />
-        <button type="submit" className="get-started">
-          Sign In with Email
+        <button type="submit" className="signin-button">
+          Sign In
         </button>
       </form>
-
-      <button onClick={handleForgotPassword} className="forgot-link">
-        Forgot Password?
+      <button onClick={handleForgotPassword} className="forgot-password-button">
+        Forgot Password
       </button>
-
-      <hr />
-      <h3>Sign in with google</h3>
-
-      <button className="get-started" onClick={signInWithGoogle}>
+      <button className="google-signin-button" onClick={signInWithGoogle}>
         Sign In with Google
       </button>
-
-      <hr />
-      <h3>Sign up for a new account using email and password</h3>
-      <button className="get-started" onClick={() => navigate("/signup")}>
-        Sign Up Here
+      <button className="signup-button" onClick={() => navigate("/signup")}>
+        Sign Up
       </button>
     </div>
   );

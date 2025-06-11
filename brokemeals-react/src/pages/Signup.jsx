@@ -37,9 +37,10 @@ function Signup() {
 
   return (
     <div className="signup-container">
-      <h2>Create an Account</h2>
+      <h2>Sign up form</h2>
       <form onSubmit={handleSignup}>
         <input
+          className = "email-input-box"
           type="email"
           placeholder="Email"
           value={email}
@@ -47,14 +48,17 @@ function Signup() {
           required
         /><br />
         <input
+          className = "password-input-box"
           type="password"
           placeholder="Password (min 6 chars)"
           value={password}
           onChange={e => setPassword(e.target.value)}
           required
         /><br />
-        <button type="submit" className="get-started">Sign Up</button>
+        <button type="submit" className="signup-submit-button">Sign Up</button>
       </form>
+      <p>Already have an account? <a href="/Signin">Sign In</a></p>
+      <p>By signing up, you agree to our Terms of Service and Privacy Policy</p>
     </div>
   );
 }
