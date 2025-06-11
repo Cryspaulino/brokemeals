@@ -21,8 +21,8 @@ function Home() {
         </Link>
         <div className= "home-heading-links">
           <Link className="home" to="/">Home</Link>
-          <Link className="home-goals-link" to="/goals">Recipes</Link>
-          <Link className="home-recipes-link" to="/recipes">Saved Recipes</Link>
+          <Link className="home-recipes-link" to="/recipes">Recipes</Link>
+          <Link className="home-saved-recipes-link" to="/saved_recipes">Saved Recipes</Link>
           <Link className="tutorial" to="/Tutorial">Tutorial</Link>
         </div>
       </div>

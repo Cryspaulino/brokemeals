@@ -14,10 +14,10 @@ function Layout() {
             <img className="logo" src="/images/logo.jpg" alt="Broke Meals Logo" />
           </a>
           <h1 className="title">Broke Meals</h1>
-          <Link className="nav_home" to="/">Home</Link>
-          <Link className="nav_goals" to="/goals">Recipes</Link>
-          <Link className="nav_recipes" to="/recipes">Saved Recipes</Link>
-          <Link className="sign_in" to="/Signin">Sign In</Link>
+          <Link className="nav-home" to="/">Home</Link>
+          <Link className="nav-recipes" to="/recipes">Recipes</Link>
+          <Link className="nav-saved-recipes" to="/saved_recipes">Saved Recipes</Link>
+          <Link className="sign-in" to="/Signin">Sign In</Link>
         </nav>
       </header>
 
