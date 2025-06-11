@@ -28,6 +28,18 @@ function Layout() {
       <footer>
         <div className="footer-logo-and-social-media-box">
           <img className="footer-logo" src="/images/logo.jpg" alt="Broke Meals Logo" />
+          <a className="footer-instagram-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="instagram-logo"/>
+          </a>
+          <a className="footer-facebook-link" href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/960px-Facebook_logo_%28square%29.png" alt="facebook-logo"/>
+          </a>
+          <a className="footer-x-link" href="https://x.com" target="_blank" rel="noopener noreferrer">
+            <img 
+              src="images/x-logo.png" alt="x-logo"/>
+          </a>
         </div>
         <div className= "footer-address-and-copyright-box">
           <h3 className="address">Address: 123 Main St, Anytown, USA</h3>
@@ -37,12 +49,12 @@ function Layout() {
           <h3 className="footer-subscribe-text">Enter your email to subscibe to our newsletter below:</h3>
           <input className="footer-subscribe-input" type="email" placeholder="Enter your email" />
           <button className="footer-subscribe-button">Subscribe</button>
-          <p className= "footer-subscribe-agreement">By subscribing, you agree to recieve emails from us and acknowledge our Privacy Policy</p>
+          <p className= "footer-subscribe-agreement">By subscribing, you agree to receive emails from us and acknowledge our Privacy Policy</p>
         </div>
         <div className= "footer-copyright-box">
           <p className= "footer-copyright">Beus, Ili, Kafle, Nelson, Paulino Cabrera, Poole &copy; 2025 Broke Meals</p>
-          <p className= "footer-privacy-policy"></p>
-          <p className= "footer-terms-of-use"></p>
+          <p className= "footer-privacy-policy">Privacy Policy</p>
+          <p className= "footer-terms-of-use">Terms of Service</p>
         </div>
       </footer>
     </>
