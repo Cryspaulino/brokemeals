@@ -8,6 +8,7 @@ import { auth, provider, database } from "../firebase/firebaseConfig";
 import React, { useState } from "react";
 import { ref, set } from "firebase/database";
 import "../styles/styles.css";
+import { useAuth } from "../context/AuthContext";
 
 function Signin() {
   // Define the const's for email and password logins, set to empty so the boxes do not autopopulate.
