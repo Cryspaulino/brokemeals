@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Ribeye&display=swap');
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Chewy&family=Jost:ital,wght@0,100..900;1,100..900&family=Ribeye&display=swap');
 
-/* colors */
+/* Colors */
 :root {
     --primary-color: #FFA115;
     --secondary-color: #FF5252;
