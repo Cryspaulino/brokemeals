@@ -135,10 +135,53 @@ function addTagToList(tag) {
 
   return (
     <div>
-      <h1>🍲 All Recipes</h1>
-
-        <div className="tag-buttons">
+      <h1>🍲 Recipes 🍲</h1>
+      <div className ="main-content">
+        <div className="recipe-list">
+          {filteredRecipes.length > 0 ? (
+            // If there is at least one recipe in the array, render them using map. Otherwise, show a loading message.
+            // Loop through the recipes array and return 1 div per recipe.
+        
+            filteredRecipes.map((recipe) => (
           
+              // Each recipe is a div with a unique key, which is the recipe's id. Allows React to keep track of each recipe.
+              // I've added "className" = "recipe-card" to each recipe div for styling purposes. All data is shown for now.
+              // Joyce can style these cards.
+              // Below is also making calls to our databse to get the name, price, ingredients, instructions, and tags.
+
+              // Added onClick functionality, users will be rerouted to the SingleRecipe page on click.
+              <div 
+                key={recipe.id}
+                className="recipe-card"
+                onClick={() => navigate(`/recipe? id=${recipe.id}`)}
+                style={{ cursor: 'pointer' }}
+              >
+                <h2>{recipe.name}</h2>
+                <p><strong>Price:</strong>  {recipe.price}</p>
+
+                <h4>Ingredients:</h4>
+                <ul>
+                  {recipe.ingredients?.map  ((item, index) => (
+                <li key={index}>{item}</li>
+                  ))}
+                </ul>
+
+                {/* <h4>Instructions:</h4>
+                <p>{recipe.instructions}</p> */}
+
+                <h4>Tags:</h4>
+                <ul>
+                {recipe.tags?.map((tag, index) => (
+                  <li key={index}>{tag}</li>
+                ))}
+                </ul>
+              </div>
+            ))
+            ) : (
+            <p>Loading recipes...</p>
+            )}
+        </div>
+        <div className="tag-buttons">
           <Dropdown>
             <Dropdown.Toggle variant="success" id="tag-dropdown">
               {selectedTag || "Filter"}
@@ -163,50 +206,7 @@ function addTagToList(tag) {
             </button>
           )}
         </div>
-        
-
-      {filteredRecipes.length > 0 ? (
-        // If there is at least one recipe in the array, render them using map. Otherwise, show a loading message.
-        // Loop through the recipes array and return 1 div per recipe.
-        
-        filteredRecipes.map((recipe) => (
-          
-          // Each recipe is a div with a unique key, which is the recipe's id. Allows React to keep track of each recipe.
-          // I've added "className" = "recipe-card" to each recipe div for styling purposes. All data is shown for now.
-          // Joyce can style these cards.
-          // Below is also making calls to our databse to get the name, price, ingredients, instructions, and tags.
-
-          // Added onClick functionality, users will be rerouted to the SingleRecipe page on click.
-          <div 
-            key={recipe.id}
-            className="recipe-card"
-            onClick={() => navigate(`/recipe?id=${recipe.id}`)}
-            style={{ cursor: 'pointer' }}
-           >
-            <h2>{recipe.name}</h2>
-            <p><strong>Price:</strong> {recipe.price}</p>
-
-            <h4>Ingredients:</h4>
-            <ul>
-              {recipe.ingredients?.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-
-            {/* <h4>Instructions:</h4>
-            <p>{recipe.instructions}</p> */}
-
-            <h4>Tags:</h4>
-            <ul>
-              {recipe.tags?.map((tag, index) => (
-                <li key={index}>{tag}</li>
-              ))}
-            </ul>
-          </div>
-        ))
-      ) : (
-        <p>Loading recipes...</p>
-      )}
+      </div>
     </div>
   );
 
