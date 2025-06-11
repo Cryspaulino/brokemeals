@@ -13,7 +13,6 @@ function Home() {
           We are a group of college students that want to help you get through college while eating healthy and saving money!
           Click the button below to get started!
         </h3>
-
         {/* our button is wrapped in a link to the Recipes.jsx page */}
       
         <Link to="/tutorial" className="get-started-link">
