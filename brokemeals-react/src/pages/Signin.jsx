@@ -121,6 +121,7 @@ function Signin() {
       <button className="google-signin-button" onClick={signInWithGoogle}>
         Sign In with Google
       </button>
+      <p className ="signup-text">Don't have an account?</p>
       <button className="signup-button" onClick={() => navigate("/signup")}>
         Sign Up
       </button>
