@@ -153,7 +153,7 @@ function addTagToList(tag) {
               <div 
                 key={recipe.id}
                 className="recipe-card"
-                onClick={() => navigate(`/recipe? id=${recipe.id}`)}
+                onClick={() => navigate(`/recipe?id=${recipe.id}`)}
                 style={{ cursor: 'pointer' }}
               >
                 <h2>{recipe.name}</h2>

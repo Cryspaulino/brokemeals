@@ -1,10 +1,29 @@
 // This is the home page.
-import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/styles.css';
+import React, { useEffect, useState } from 'react';
+import {ref, onValue} from 'firebase/database'
+import {database} from '../firebase/firebaseConfig'
 
 
 function Home() {
+  const [featuredRecipe, setFeaturedRecipe] = useState(null)
+  useEffect(() => {
+    const recipesRef = ref(database, "/");
+
+    onValue(recipesRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const recipeArray = Object.entries(data)
+          .filter(([_, val]) => val.name)
+          .map(([id, recipe]) => ({ id, ...recipe}));
+
+          const randomIndex = Math.floor(Math.random() * recipeArray.length);
+          setFeaturedRecipe(recipeArray[randomIndex]);
+      }
+    });
+  }, [])
+  
   return (
     <>
       <div className= "home-heading-box">
@@ -28,9 +47,21 @@ function Home() {
       </div>
       <div className= "featured-recipe-box">
         <h1 className= "featured-recipe-title">Featured Recipe: </h1>
-        {/* INSERT FEATURE RECIPE CODE HERE */}
-        {/* INSERT FEATURE RECIPE CODE HERE */}
-        {/* INSERT FEATURE RECIPE CODE HERE */}
+            {featuredRecipe ? (
+        <div className="featured-recipe">
+          <h2>{featuredRecipe.name}</h2>
+          <p><strong>Price:</strong> {featuredRecipe.price}</p>
+          <ul>
+            {featuredRecipe.ingredients?.slice(0, 3).map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+          <p><strong>Tags:</strong> {featuredRecipe.tags?.join(', ')}</p>
+        </div>
+      ) : (
+        <p>Loading featured recipe...</p>
+      )}
+
       </div>
     </>
   );
