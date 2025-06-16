@@ -18,8 +18,14 @@ function Home() {
           .filter(([_, val]) => val.name)
           .map(([id, recipe]) => ({ id, ...recipe}));
 
-          const randomIndex = Math.floor(Math.random() * recipeArray.length);
-          setFeaturedRecipe(recipeArray[randomIndex]);
+          const today = new Date().toISOString().split('T')[0];
+          let hash = 0;
+          for (let i = 0; i < today.date; i++)
+          {
+            hash += today.charCodeAt[i]
+          }
+          const index = hash % recipeArray.length
+          setFeaturedRecipe(recipeArray[index]);
       }
     });
   }, [])
