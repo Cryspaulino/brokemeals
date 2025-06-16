@@ -44,12 +44,6 @@ function Home() {
         <Link to="/tutorial" className="home-get-started-link">
           <button className="home-get-started-button">Get Started</button>
         </Link>
-        <div className= "home-heading-links">
-          <Link className="home-home-link" to="/">Home</Link>
-          <Link className="home-recipes-link" to="/recipes">Recipes</Link>
-          <Link className="home-saved-recipes-link" to="/saved_recipes">Saved Recipes</Link>
-          <Link className="home-tutorial-link" to="/Tutorial">Tutorial</Link>
-        </div>
       </div>
       <div className= "featured-recipe-box">
         <h1 className= "featured-recipe-title">Featured Recipe: </h1>
