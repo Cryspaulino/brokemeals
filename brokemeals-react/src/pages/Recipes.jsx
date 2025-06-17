@@ -157,6 +157,8 @@ function addTagToList(tag) {
                 style={{ cursor: 'pointer' }}
               >
                 <h2>{recipe.name}</h2>
+                <img className="recipe-img" src={recipe.img} alt={recipe.name}></img>
+
                 <p><strong>Price:</strong>  {recipe.price}</p>
 
                 <h4>Ingredients:</h4>
