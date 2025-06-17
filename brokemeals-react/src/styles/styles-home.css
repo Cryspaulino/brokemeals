@@ -30,7 +30,15 @@
 }
 /* Home Get Started Button */
 .home-get-started-button {
-
+    font-family: 'Chewy';
+    font-size: 35px;
+    color: #883333;
+    height: 53px;
+    text-decoration: none;
+    text-shadow: 3px 3px 3px #ffffff;
+    background: linear-gradient(to bottom, #e28d0c, #FF5252);
+    border: #992121 solid 2px;
+    margin: 5px;
 }
 /* Home Heading Links Box */
 .home-heading-links {
@@ -58,16 +66,28 @@
 /* Featured Recipe Box */
 .featured-recipe-box {
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
     border: solid 1px black;
     border-radius: 25px;
     box-shadow: 10px 8px 10px 5px rgb(172, 172, 172);
-    padding: 10px;
-    height: 400px;
-    margin: 20px;
+    padding: 20px;
+    height: auto;
+    margin: 30px;
+}
+
+.featured-recipe-box:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease;
+    box-shadow: 3px 3px 25px #e28c0cc5;
 }
 /* Featured Recipe Title */
 .featured-recipe-title {
     grid-row: 1/2;
 }
 /* Featured Recipe Content */
+
+/* Featured Recipe Img */
+.featured-recipe img{
+    width: 500px;
+    height: 400px;
+}

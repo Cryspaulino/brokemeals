@@ -9,3 +9,13 @@
     --accent2-color: #2D2033;
     --background-color: #C4BEBB;
 }
+
+
+
+.recipe-img{
+    width: 400px;
+    height: auto;
+    border-radius: 20px;
+    margin: 40px;
+    box-shadow: 1px 5px 10px grey;
+}
