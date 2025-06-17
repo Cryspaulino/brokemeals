@@ -9,9 +9,10 @@ import {getAuth, onAuthStateChanged} from 'firebase/auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // Import the navigation hook, this allows us to reroute the user depending on what recipe they select.
 import { useNavigate } from "react-router-dom";
+import { SaveFavoriteRecipe } from "../utils/SaveFavoriteRecipe";
 
 
-// Defines the React compnent for displaying recipes.
+// Defines the React component for displaying recipes.
 function Recipes() {
   // Initializes the "recipes" array to be empty. It will hold na array of recipe objects that we fetch from Firebase.
   // The "setRecipes" function will be used to update the state of the "recipes" array.
@@ -155,7 +156,7 @@ function addTagToList(tag) {
               className="save-button"
               onClick={(e) => {
                 e.stopPropagation();
-                alert("Saved");
+                SaveFavoriteRecipe(recipe);
               }}
                 > Save Recipe
                 </button>

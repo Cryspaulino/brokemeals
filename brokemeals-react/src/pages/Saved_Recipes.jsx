@@ -1,9 +1,10 @@
 // This component represents the "Saved Recipes" page. It will eventually collect the user's saved recipes in a form (I'm assuming).
 import '../styles/styles.css';
 import React, { useEffect, useState } from "react";
+import { getAuth } from 'firebase/auth';
 
 function Saved_Recipes() {
-    const [user, setUser] = useState(null);
+    const user = getAuth().currentUser;
     // Page if user is not logged in
     if (!user) {
     return (
@@ -15,7 +16,7 @@ function Saved_Recipes() {
   else{
       return (
     <div>
-      {/* You can add form inputs or interactive elements here */}
+      <p>Logged in!</p>
     </div>
   );
 }
