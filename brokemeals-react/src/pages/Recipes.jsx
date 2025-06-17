@@ -149,13 +149,25 @@ function addTagToList(tag) {
               // Joyce can style these cards.
               // Below is also making calls to our databse to get the name, price, ingredients, instructions, and tags.
 
-              // Added onClick functionality, users will be rerouted to the SingleRecipe page on click.
+              // Added onClick functionality, users will be rerouted to the SingleRecipe page on click
+              
+              <div key={recipe.id} className="recipe-card-wrapper">
+                
               <div 
                 key={recipe.id}
                 className="recipe-card"
                 onClick={() => navigate(`/recipe?id=${recipe.id}`)}
                 style={{ cursor: 'pointer' }}
               >
+              <button
+              className="save-button"
+              onClick={(e) => {
+                e.stopPropagation();
+                alert("Saved");
+              }}
+                > Save Recipe
+                </button>
+
                 <h2>{recipe.name}</h2>
                 <p><strong>Price:</strong>  {recipe.price}</p>
 
@@ -176,6 +188,8 @@ function addTagToList(tag) {
                 ))}
                 </ul>
               </div>
+              
+            </div>
             ))
             ) : (
             <p>Loading recipes...</p>
