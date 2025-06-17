@@ -123,14 +123,6 @@ function addTagToList(tag) {
     });
   }, []);
 
-  // Page if user isn't logged in
-  if (!user) {
-    return (
-      <div className= "not-logged-in">
-        <h1 className= "not-logged-in-message">🍲 Please log in to view your saved recipes. 🍲</h1>
-      </div>
-    );
-  }
 
 
   return (

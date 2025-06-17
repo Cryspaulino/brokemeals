@@ -18,8 +18,14 @@ function Home() {
           .filter(([_, val]) => val.name)
           .map(([id, recipe]) => ({ id, ...recipe}));
 
-          const randomIndex = Math.floor(Math.random() * recipeArray.length);
-          setFeaturedRecipe(recipeArray[randomIndex]);
+          const today = new Date().toISOString().split('T')[0];
+          let hash = 0;
+          for (let i = 0; i < today.date; i++)
+          {
+            hash += today.charCodeAt[i]
+          }
+          const index = hash % recipeArray.length
+          setFeaturedRecipe(recipeArray[index]);
       }
     });
   }, [])
@@ -38,12 +44,6 @@ function Home() {
         <Link to="/tutorial" className="home-get-started-link">
           <button className="home-get-started-button">Get Started</button>
         </Link>
-        <div className= "home-heading-links">
-          <Link className="home-home-link" to="/">Home</Link>
-          <Link className="home-recipes-link" to="/recipes">Recipes</Link>
-          <Link className="home-saved-recipes-link" to="/saved_recipes">Saved Recipes</Link>
-          <Link className="home-tutorial-link" to="/Tutorial">Tutorial</Link>
-        </div>
       </div>
       <div className= "featured-recipe-box">
         <h1 className= "featured-recipe-title">Featured Recipe: </h1>
