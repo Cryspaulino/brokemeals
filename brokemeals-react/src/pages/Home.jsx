@@ -50,6 +50,9 @@ function Home() {
             {featuredRecipe ? (
         <div className="featured-recipe">
           <h2>{featuredRecipe.name}</h2>
+          {featuredRecipe.img && (
+            <img className="recipe-img" src={featuredRecipe.img} alt={featuredRecipe.name}></img> 
+          )}
           <p><strong>Price:</strong> {featuredRecipe.price}</p>
           <ul>
             {featuredRecipe.ingredients?.slice(0, 3).map((item, index) => (

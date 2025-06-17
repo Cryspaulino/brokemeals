@@ -55,7 +55,9 @@ import '../styles/styles-singlerecipe.css'
 
                     {/* Name and Price */}
                     <h1>{recipe.name}</h1>
-                    <img className="recipe-img" src={recipe.img} alt={recipe.name}></img>
+                    {recipe.img && (
+                        <img className="recipe-img" src={recipe.img} alt={recipe.name}></img>
+                        )}
                     <p><strong>Price:</strong> {recipe.price}</p>
 
                     {/* Tags (there is a lambda function inside the tags ul. It maps out the tags, and then puts each individual tag as its own li element.) */}
