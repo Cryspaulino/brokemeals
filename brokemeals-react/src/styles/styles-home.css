@@ -75,11 +75,11 @@
     margin: 30px;
 }
 
-.featured-recipe-box:hover {
+/* .featured-recipe-box:hover {
     transform: scale(1.02);
     transition: 0.3s ease;
     box-shadow: 3px 3px 25px #e28c0cc5;
-}
+} */
 /* Featured Recipe Title */
 .featured-recipe-title {
     grid-row: 1/2;
