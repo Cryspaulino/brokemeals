@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Import the navigation hook, this allows us to reroute the user depending on what recipe they select.
 import { useNavigate } from "react-router-dom";
 import { SaveFavoriteRecipe } from "../utils/SaveFavoriteRecipe";
-
+import '../styles/styles-recipes.css';
 
 // Defines the React component for displaying recipes.
 function Recipes() {

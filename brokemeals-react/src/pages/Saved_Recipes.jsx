@@ -1,5 +1,5 @@
 // This component represents the "Saved Recipes" page. It will eventually collect the user's saved recipes in a form (I'm assuming).
-import '../styles/styles.css';
+import '../styles/styles-saved-recipes.css';
 import React, { useEffect, useState } from "react";
 import { getAuth } from 'firebase/auth';
 

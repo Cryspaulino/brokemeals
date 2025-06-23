@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/styles.css';
+import '../styles/styles-tutorial.css';
 
 function Tutorial() {
     return (
