@@ -128,7 +128,7 @@ function addTagToList(tag) {
 
   return (
     <div>
-      <h1>🍲 Recipes 🍲</h1>
+      <h1 className="recipe-page-title">🍲 Recipes 🍲</h1>
       <div className ="main-content">
         <div className="recipe-list">
           {filteredRecipes.length > 0 ? (
@@ -144,7 +144,7 @@ function addTagToList(tag) {
 
               // Added onClick functionality, users will be rerouted to the SingleRecipe page on click
               
-              <div key={recipe.id} className="recipe-card-wrapper">
+            <div key={recipe.id} className="recipe-card-wrapper">
                 
               <div 
                 key={recipe.id}
@@ -175,7 +175,7 @@ function addTagToList(tag) {
                   ))}
                 </ul>
                 <h4 className = "recipe-tags-title">Tags:</h4>
-                <ul>
+                <ul className = "tag-list">
                 {recipe.tags?.map((tag, index) => (
                   <li key={index}>{tag}</li>
                 ))}
@@ -186,11 +186,11 @@ function addTagToList(tag) {
             </div>
             ))
             ) : (
-            <p>Loading recipes...</p>
-            )}
+            <p className = "loading-recipes-text">Loading recipes...</p>
+          )}
         </div>
-        <div className="tag-buttons">
-          <Dropdown>
+        <div className="tag-buttons-box">
+          <Dropdown className = "tag-buttons-dropdown">
             <Dropdown.Toggle variant="success" id="tag-dropdown">
               {selectedTag || "Filter"}
             </Dropdown.Toggle>
@@ -209,7 +209,7 @@ function addTagToList(tag) {
           </Dropdown>
           {selectedTags.length > 0 && (
             // When clicked, we call the clearTagList function.
-            <button onClick={clearTagList} className="clear-button">
+            <button onClick={clearTagList} className="clear-filters-button">
               Clear Filters
             </button>
           )}
