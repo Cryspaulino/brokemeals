@@ -161,29 +161,26 @@ function addTagToList(tag) {
                 > Save Recipe
                 </button>
 
-                <h2>{recipe.name}</h2>
+                <h2 className="recipe-name">{recipe.name}</h2>
                 {recipe.img && (
                   <img className="recipe-img" src={recipe.img} alt={recipe.name}></img>
                 )}
+                <div className = "recipe-info-box">
+                <p className = "price"><strong>Price:</strong>  {recipe.price}</p>
 
-                <p><strong>Price:</strong>  {recipe.price}</p>
-
-                <h4>Ingredients:</h4>
-                <ul>
+                <h4 className = "recipe-ingredients-title">Ingredients:</h4>
+                <ul className = "ingredient-list">
                   {recipe.ingredients?.map  ((item, index) => (
                 <li key={index}>{item}</li>
                   ))}
                 </ul>
-
-                {/* <h4>Instructions:</h4>
-                <p>{recipe.instructions}</p> */}
-
-                <h4>Tags:</h4>
+                <h4 className = "recipe-tags-title">Tags:</h4>
                 <ul>
                 {recipe.tags?.map((tag, index) => (
                   <li key={index}>{tag}</li>
                 ))}
                 </ul>
+                </div>
               </div>
               
             </div>
