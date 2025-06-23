@@ -93,6 +93,7 @@ function Signin() {
       <h1 className= "signin-title">Sign In</h1>
       {/* Email/Password Sign In */}
       <form className = "signin-email-form" onSubmit={signInWithEmail}>
+        <p className ="signin-email-text">Email:</p>
         <input
           className = "email-input-box"
           type="email"
@@ -102,6 +103,7 @@ function Signin() {
           required
         />
         <br />
+        <p className ="signin-password-text">Password:</p>
         <input
           className = "password-input-box"
           type="password"

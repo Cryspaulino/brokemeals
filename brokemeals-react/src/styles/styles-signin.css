@@ -33,10 +33,17 @@
 /* signin email form/box */
 .signin-email-form {
     grid-row: 2/3;
-    height: 100px;
+}
+/* signin email subtitle */
+.signin-email-text{
+    margin: 5px;
 }
 /* signin email input box */
 .email-input-box {
+    margin: 5px;
+}
+/* signin password subtitle */
+.signin-password-text{
     margin: 5px;
 }
 /* signin password input box */
