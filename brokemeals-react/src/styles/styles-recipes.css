@@ -146,8 +146,7 @@
 
 
 /* Are these for the header? */
-/* Are these for the header? */
-/* Are these for the header? */
+/* If they are, can we move them to the styles-layout file? */
 
 
 @media (max-width:800px) {
@@ -191,9 +190,9 @@
 }
 
 
-/* What are these lol? */
-/* What are these lol? */
-/* What are these lol? */
+
+
+/* These also need to be moved, but idk where lol */
 
 
 .tags-and-instructions-box{
