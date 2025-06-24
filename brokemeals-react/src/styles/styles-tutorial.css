@@ -9,3 +9,116 @@
     --accent2-color: #2D2033;
     --background-color: #C4BEBB;
 }
+
+/* Tutorial Content Box */
+.tutorial-content-box{
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    justify-self: center;
+    justify-items: center;
+    width: 100%;
+    margin: 30px;
+    border: solid 1px black;
+}
+/* Tutorial Title */
+.tutorial-title{
+    grid-row: 1/2;
+}
+/* Tutorial Subtitle */
+.tutorial-subtitle{
+    grid-row: 2/3;
+}
+/* Tutorial Steps Box */
+.tutorial-steps-boxes{
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    width: 100%;
+    border: solid 1px black;
+}
+
+/* Tutorial Step 1 */
+/* Tutorial Step 1 */
+
+
+/* Tutorial Step 1 Box */
+.tutorial-step-1-box{
+    margin: 30px;
+    border: solid 1px black;
+}
+/* Step 1 Title */
+.step-1-title{
+
+}
+/* Step 1 Text */
+.step-1-text{
+
+}
+/* Step 1 Image */
+.step-1-image{
+
+}
+
+/* Tutorial Step 2 */
+/* Tutorial Step 2 */
+
+
+/* Tutorial Step 2 Box */
+.tutorial-step-2-box{
+    margin: 30px;
+    border: solid 1px black;
+}
+/* Step 2 Title */
+.step-2-title{
+    
+}
+/* Step 2 Text */
+.step-2-text{
+
+}
+/* Step 2 Image */
+.step-2-image{
+
+}
+
+/* Tutorial Step 3 */
+/* Tutorial Step 3 */
+
+
+/* Tutorial Step 3 Box */
+.tutorial-step-3-box{
+    margin: 30px;
+    border: solid 1px black;
+}
+/* Step 3 Title */
+.step-3-title{
+
+}
+/* Step 3 Text */
+.step-3-text{
+
+}
+/* Step 3 Image */
+.step-3-image{
+
+}
+
+
+/* Get Started Button */
+.tutorial-get-started-button{
+    grid-row: 4/5;
+    margin: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
