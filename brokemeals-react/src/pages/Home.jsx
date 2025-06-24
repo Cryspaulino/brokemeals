@@ -45,26 +45,27 @@ function Home() {
           <button className="home-get-started-button">Get Started</button>
         </Link>
       </div>
-      <div className= "featured-recipe-box">
+      <div className= "featured-recipe-box-outer">
         <h1 className= "featured-recipe-title">Featured Recipe: </h1>
             {featuredRecipe ? (
-        <div className="featured-recipe">
-          <h2>{featuredRecipe.name}</h2>
+        <div className="featured-recipe-box-inner">
+          <h2 className ="fr-name">{featuredRecipe.name}</h2>
           {featuredRecipe.img && (
             <img className="recipe-img" src={featuredRecipe.img} alt={featuredRecipe.name}></img> 
           )}
-          <p><strong>Price:</strong> {featuredRecipe.price}</p>
-          <ul>
+          <p className = "fr-price"><strong className="fr-price-title">Price:</strong> {featuredRecipe.price}</p>
+          <p className = "fr-ingredients-title"><strong>Ingredients:</strong>
+          <ul className = "fr-ingredients-list">
             {featuredRecipe.ingredients?.slice(0, 3).map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
-          <p><strong>Tags:</strong> {featuredRecipe.tags?.join(', ')}</p>
+          </p>
+          <p className ="fr-tags"><strong className ="fr-tags-title">Tags:</strong> {featuredRecipe.tags?.join(', ')}</p>
         </div>
       ) : (
-        <p>Loading featured recipe...</p>
+        <p className ="loading-fr-text">Loading featured recipe...</p>
       )}
-
       </div>
     </>
   );

@@ -28,7 +28,7 @@ function Tutorial() {
                 </div>
             </div>
             <Link to="/recipes">
-                <button className="tutorial-get-started-button">Get Started</button>
+                <button className="tutorial-go-to-recipes-button">Go To Recipes!</button>
             </Link>
         </div>
     );
