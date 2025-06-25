@@ -174,12 +174,9 @@ function addTagToList(tag) {
                 <li key={index}>{item}</li>
                   ))}
                 </ul>
-                <h4 className = "recipe-tags-title">Tags:</h4>
-                <ul className = "tag-list">
-                {recipe.tags?.map((tag, index) => (
-                  <li key={index}>{tag}</li>
-                ))}
-                </ul>
+                <p className ="recipe-tags"> <strong>Tags: </strong>{recipe.tags?.join(', ')}</p>
+
+                
                 </div>
               </div>
               

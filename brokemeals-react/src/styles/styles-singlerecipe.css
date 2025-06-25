@@ -113,3 +113,32 @@
 .backtorecipes{
     grid-row: 5/6;
 }
+
+/* SINGLE RECIPES */
+.recipe-container{
+    display: grid;
+    margin: 20px;
+    border-radius: 25px;
+    box-shadow: 10px 8px 10px 5px rgb(172, 172, 172);
+    padding: 10px;
+    flex: 1;
+}
+
+.recipe-container h1{
+    text-align: center;
+}
+
+.recipetext{
+    padding: 20px;
+}
+
+.recipe-container{
+    background-color: #f7f7f7;
+}
+
+.backtorecipes{
+    padding: 20px;
+    margin: 30px;
+    border: solid 1px var(--accent2-color);
+    width: 200px;
+}
