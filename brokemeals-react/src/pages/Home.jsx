@@ -2,33 +2,39 @@
 import { Link } from 'react-router-dom';
 import '../styles/styles-home.css';
 import React, { useEffect, useState } from 'react';
-import {ref, onValue} from 'firebase/database'
+import {onValue} from 'firebase/database'
 import {database} from '../firebase/firebaseConfig'
+import { get, ref, child } from "firebase/database";
 
 
 function Home() {
   const [featuredRecipe, setFeaturedRecipe] = useState(null)
   useEffect(() => {
-    const recipesRef = ref(database, "/");
-
-    onValue(recipesRef, (snapshot) => {
+    const fetchFeaturedRecipe = async () => {
+      const dbRef = ref(database);
+      const snapshot = await get(child(dbRef, "/"));
       const data = snapshot.val();
-      if (data) {
+
+    if (data) {
         const recipeArray = Object.entries(data)
           .filter(([_, val]) => val.name)
           .map(([id, recipe]) => ({ id, ...recipe}));
 
           const today = new Date().toISOString().split('T')[0];
           let hash = 0;
-          for (let i = 0; i < today.date; i++)
+          for (let i = 0; i < today.length; i++)
           {
-            hash += today.charCodeAt[i]
+            hash += today.charCodeAt(i);
           }
           const index = hash % recipeArray.length
           setFeaturedRecipe(recipeArray[index]);
+
       }
-    });
-  }, [])
+    };
+
+    fetchFeaturedRecipe();
+
+  }, []);
   
   return (
     <>
