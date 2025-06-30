@@ -133,6 +133,7 @@
 .tag-buttons-dropdown{
     padding: 20px;
     margin-left: 2rem;
+    margin-right: 10px;
     background-color: #dfd9d6;
     justify-items: center;
     border: 1px solid #2D2033;
@@ -175,12 +176,19 @@
         margin-right: 30px;
     }
 
+    .header-title{
+        display: none;
+    }
+
     .navbar{
+        grid-template-columns: repeat(5, fr);
         height: auto;
     }
 
     .navbar a{
         margin: 5px;
+        font-size: 30px;
+        height: auto;
     }
 }
 
