@@ -67,6 +67,19 @@ function Home() {
             ))}
           </ul>
           </p>
+          <div className='fr-instructions'>
+            <h4>Instructions:</h4>
+            <ul className ="instructions">
+              {featuredRecipe.instructions
+                .split(/\d+\.\s/)
+                .filter((step) => step.trim() !== "")
+                .map((step, index) => (
+                  <div key={index}>
+                    {index + 1}. {step.trim()}
+                  </div>
+                ))}
+            </ul>
+          </div>
           <p className ="fr-tags"><strong className ="fr-tags-title">Tags:</strong> {featuredRecipe.tags?.join(', ')}</p>
         </div>
       ) : (

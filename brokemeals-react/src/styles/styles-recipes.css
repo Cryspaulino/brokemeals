@@ -13,12 +13,13 @@
 /* Recipe Page Title */
 .recipe-page-title{
     text-align: center;
+    padding-top: 20px;
 }
 
 /* Main Content */
 .main-content{
     display: grid;
-    grid-template-columns: 85% 15%;
+    grid-template-columns: 80% 20%;
 }
 
 
@@ -38,13 +39,14 @@
     grid-template-columns: repeat(2, 1fr);
     position: relative;
     grid-column: 2;
-    margin: 30px;
+    margin: 40px;
     border: solid 1px black;
     border-radius: 25px;
     box-shadow: 10px 8px 10px rgb(172, 172, 172);
     padding: 10px;
     transition: box-shadow 0.3s ease;
 }
+
 .recipe-card:hover{
     transform: scale(1.02);
     transition: 0.3s ease;
@@ -83,6 +85,7 @@
 /* Recipe Info Box */
 .recipe-info-box{
     grid-column: 2/3;
+    margin-top: 40px;
 }
 
 /* Price */
@@ -101,8 +104,9 @@
 }
 
 /* Recipe Tags Title */
-.recipe-tags-title{
-    
+.recipe-tags{
+    font-style: italic;
+    grid-column: 1;
 }
 
 /* Tag List */
@@ -129,21 +133,31 @@
 .tag-buttons-dropdown{
     padding: 20px;
     margin-left: 2rem;
-    background-color: #C4BEBB;
+    margin-right: 10px;
+    background-color: #dfd9d6;
     justify-items: center;
-    border-left: 1px solid #2D2033;
+    border: 1px solid #2D2033;
+    border-radius: 10px;
     min-height: 2400vh;
     position: sticky;
     top: 0;
     margin-top: 30px;
 }
-/* Clear Filters Button */
-.clear-filters-button{
 
+#tag-dropdown{
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    color: black;
+    font-size: large;
+    background-color: var(--accent1-color);
 }
 
+/* Clear Filters Button */
+.clear-filters-button{
+    /* margin: 20px; */
 
-
+}
 
 /* Are these for the header? */
 /* If they are, can we move them to the styles-layout file? */
@@ -162,12 +176,19 @@
         margin-right: 30px;
     }
 
+    .header-title{
+        display: none;
+    }
+
     .navbar{
+        grid-template-columns: repeat(5, fr);
         height: auto;
     }
 
     .navbar a{
         margin: 5px;
+        font-size: 30px;
+        height: auto;
     }
 }
 
@@ -206,37 +227,5 @@
 
 
 button{
-    /* display: flex; */
     margin: 5px;
-}
-
-/* SINGLE RECIPES */
-.recipe-container{
-    display: grid;
-    margin: 20px;
-    /* border: solid 1px black; */
-    border-radius: 25px;
-    box-shadow: 10px 8px 10px 5px rgb(172, 172, 172);
-    padding: 10px;
-    flex: 1;
-}
-
-.recipe-container h1{
-    text-align: center;
-}
-
-.recipetext{
-    padding: 20px;
-}
-
-.recipe-container{
-    background-color: #f7f7f7;
-}
-
-.backtorecipes{
-    padding: 20px;
-    margin: 30px;
-    border: solid 1px var(--accent2-color);
-    width: 200px;
-    /* border-radius: 10px; */
 }
