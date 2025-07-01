@@ -27,7 +27,7 @@ function Layout() {
           <Link className="header-nav-recipes" to="/recipes">
             Recipes
           </Link>
-          <Link className="header-nav-saved-recipes" to="/savedrecipes">
+          <Link className="header-nav-saved-recipes" to="/Saved_Recipes">
             Saved Recipes
           </Link>
           {/* Start handling login/logout jsx implementation */}
