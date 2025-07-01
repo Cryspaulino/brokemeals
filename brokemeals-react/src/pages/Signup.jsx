@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { ref, set } from 'firebase/database';
 import { useNavigate } from "react-router-dom";
 import { auth, database } from '../firebase/firebaseConfig';
-import '../styles/styles.css';
+import '../styles/styles-signup.css';
 
 // Define Signup component.
 function Signup() {
@@ -37,8 +37,9 @@ function Signup() {
 
   return (
     <div className="signup-container">
-      <h2>Sign up form</h2>
+      <h1 className ="signup-title">Sign Up</h1>
       <form onSubmit={handleSignup}>
+        <p className ="signup-email-text">Email:</p>
         <input
           className = "email-input-box"
           type="email"
@@ -47,6 +48,7 @@ function Signup() {
           onChange={e => setEmail(e.target.value)}
           required
         /><br />
+        <p className ="signup-password-text">Password:</p>
         <input
           className = "password-input-box"
           type="password"
@@ -57,8 +59,8 @@ function Signup() {
         /><br />
         <button type="submit" className="signup-submit-button">Sign Up</button>
       </form>
-      <p>Already have an account? <a href="/Signin">Sign In</a></p>
-      <p>By signing up, you agree to our Terms of Service and Privacy Policy</p>
+      <p className = "signup-redirect-text">Already have an account? <a className ="signup-redirect" href="/Signin">Sign In</a></p>
+      <p className ="signup-agreement-text">By signing up, you agree to our Terms of Service and Privacy Policy</p>
     </div>
   );
 }

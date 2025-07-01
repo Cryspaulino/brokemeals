@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth, provider, database } from "../firebase/firebaseConfig";
 import React, { useState } from "react";
 import { ref, set } from "firebase/database";
-import "../styles/styles.css";
+import "../styles/styles-signin.css";
 import { useAuth } from "../context/AuthContext";
 
 function Signin() {
@@ -93,6 +93,7 @@ function Signin() {
       <h1 className= "signin-title">Sign In</h1>
       {/* Email/Password Sign In */}
       <form className = "signin-email-form" onSubmit={signInWithEmail}>
+        <p className ="signin-email-text">Email:</p>
         <input
           className = "email-input-box"
           type="email"
@@ -102,6 +103,7 @@ function Signin() {
           required
         />
         <br />
+        <p className ="signin-password-text">Password:</p>
         <input
           className = "password-input-box"
           type="password"
@@ -121,10 +123,12 @@ function Signin() {
       <button className="google-signin-button" onClick={signInWithGoogle}>
         Sign In with Google
       </button>
-      <p className ="signup-text">Don't have an account?</p>
-      <button className="signup-button" onClick={() => navigate("/signup")}>
+      <div className= "no-account-box">
+        <p className ="signin-signup-text">Don't have an account?</p>
+        <button className="signin-signup-button" onClick={() => navigate("/signup")}>
         Sign Up
-      </button>
+        </button>
+      </div>
     </div>
   );
 }

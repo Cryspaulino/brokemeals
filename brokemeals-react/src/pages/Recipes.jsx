@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
 // Import the SaveFavoriteRecipe function.
 import { SaveFavoriteRecipe } from "../utils/SaveFavoriteRecipe";
-
+import '../styles/styles-recipes.css';
 
 // Defines the React component for displaying recipes.
 function Recipes() {
@@ -129,7 +129,7 @@ function addTagToList(tag) {
 
   return (
     <div>
-      <h1>🍲 Recipes 🍲</h1>
+      <h1 className="recipe-page-title">🍲 Recipes 🍲</h1>
       <div className ="main-content">
         <div className="recipe-list">
           {filteredRecipes.length > 0 ? (
@@ -145,7 +145,7 @@ function addTagToList(tag) {
 
               // Added onClick functionality, users will be rerouted to the SingleRecipe page on click
               
-              <div key={recipe.id} className="recipe-card-wrapper">
+            <div key={recipe.id} className="recipe-card-wrapper">
                 
               <div 
                 key={recipe.id}
@@ -162,39 +162,33 @@ function addTagToList(tag) {
                 > Save Recipe
                 </button>
 
-                <h2>{recipe.name}</h2>
+                <h2 className="recipe-name">{recipe.name}</h2>
                 {recipe.img && (
                   <img className="recipe-img" src={recipe.img} alt={recipe.name}></img>
                 )}
+                <div className = "recipe-info-box">
+                <p className = "price"><strong>Price:</strong>  {recipe.price}</p>
 
-                <p><strong>Price:</strong>  {recipe.price}</p>
-
-                <h4>Ingredients:</h4>
-                <ul>
+                <h4 className = "recipe-ingredients-title">Ingredients:</h4>
+                <ul className = "ingredient-list">
                   {recipe.ingredients?.map  ((item, index) => (
                 <li key={index}>{item}</li>
                   ))}
                 </ul>
+                <p className ="recipe-tags"> <strong>Tags: </strong>{recipe.tags?.join(', ')}</p>
 
-                {/* <h4>Instructions:</h4>
-                <p>{recipe.instructions}</p> */}
-
-                <h4>Tags:</h4>
-                <ul>
-                {recipe.tags?.map((tag, index) => (
-                  <li key={index}>{tag}</li>
-                ))}
-                </ul>
+                
+                </div>
               </div>
               
             </div>
             ))
             ) : (
-            <p>Loading recipes...</p>
-            )}
+            <p className = "loading-recipes-text">Loading recipes...</p>
+          )}
         </div>
-        <div className="tag-buttons">
-          <Dropdown>
+        <div className="tag-buttons-box">
+          <Dropdown className = "tag-buttons-dropdown">
             <Dropdown.Toggle variant="success" id="tag-dropdown">
               {selectedTag || "Filter"}
             </Dropdown.Toggle>
@@ -213,7 +207,7 @@ function addTagToList(tag) {
           </Dropdown>
           {selectedTags.length > 0 && (
             // When clicked, we call the clearTagList function.
-            <button onClick={clearTagList} className="clear-button">
+            <button onClick={clearTagList} className="clear-filters-button">
               Clear Filters
             </button>
           )}

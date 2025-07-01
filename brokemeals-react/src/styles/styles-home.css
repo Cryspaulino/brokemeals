@@ -63,10 +63,16 @@
 .home-tutorial-link {
     grid-column: 4/5;
 }
+
+
+/* Featured Recipe */
+/* Featured Recipe */
+
+
 /* Featured Recipe Box */
-.featured-recipe-box {
+.featured-recipe-box-outer {
     display: grid;
-    /* grid-template-rows: repeat(2, 1fr); */
+    grid-template-rows: repeat(2, auto);
     border: solid 1px black;
     border-radius: 25px;
     box-shadow: 10px 8px 10px 5px rgb(172, 172, 172);
@@ -74,20 +80,68 @@
     height: auto;
     margin: 30px;
 }
-
-.featured-recipe-box:hover {
-    transform: scale(1.02);
-    transition: 0.3s ease;
-    box-shadow: 3px 3px 25px #e28c0cc5;
-}
 /* Featured Recipe Title */
 .featured-recipe-title {
     grid-row: 1/2;
+    grid-column: 1/3;
 }
-/* Featured Recipe Content */
+/* Featured Recipe Inner Box */
+.featured-recipe-box-inner {
+    display: grid;
+    grid-template-rows: repeat(6, auto);
+    grid-template-columns: repeat(2, 1fr);
+    font-size: large;
+}
 
+.featured-recipe-box-inner img{
+    width: 600px;
+}
+
+/* Featured Recipe Name */
+.fr-name{
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
 /* Featured Recipe Img */
-.featured-recipe img{
-    width: 500px;
-    height: 400px;
+.recipe-img{
+    grid-row: 2/4;
+    grid-column: 1/2;
+}
+/* Featured Recipe Price */
+.fr-price{
+    grid-column: 1/2;
+    grid-row: 5;
+    position: relative;
+}
+
+.fr-instructions{
+    grid-column: 1;
+    grid-row: 4;
+}
+
+/* Featured Recipe Ingredients Title */
+.fr-ingredients-title{
+    margin-top: 40px;    
+}
+
+.fr-ingredients-title strong{
+    font-size: 1.5em;
+}
+
+/* Featured Recipe Ingredients List */
+.fr-ingredients-list{
+    grid-row: 2/3;
+}
+/* Featured Recipe Tags Title */
+.fr-tags-title{
+    grid-row: 2/3;
+}
+/* Featured Recipe Tags */
+.fr-tags{
+    grid-column: 1/2;
+    grid-row: 6;
+}
+/* "Loading Featured Recipe" Text */
+.loading-fr-text{
+
 }

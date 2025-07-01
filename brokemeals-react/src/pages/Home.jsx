@@ -2,33 +2,39 @@
 import { Link } from 'react-router-dom';
 import '../styles/styles-home.css';
 import React, { useEffect, useState } from 'react';
-import {ref, onValue} from 'firebase/database'
+import {onValue} from 'firebase/database'
 import {database} from '../firebase/firebaseConfig'
+import { get, ref, child } from "firebase/database";
 
 
 function Home() {
   const [featuredRecipe, setFeaturedRecipe] = useState(null)
   useEffect(() => {
-    const recipesRef = ref(database, "/");
-
-    onValue(recipesRef, (snapshot) => {
+    const fetchFeaturedRecipe = async () => {
+      const dbRef = ref(database);
+      const snapshot = await get(child(dbRef, "/"));
       const data = snapshot.val();
-      if (data) {
+
+    if (data) {
         const recipeArray = Object.entries(data)
           .filter(([_, val]) => val.name)
           .map(([id, recipe]) => ({ id, ...recipe}));
 
           const today = new Date().toISOString().split('T')[0];
           let hash = 0;
-          for (let i = 0; i < today.date; i++)
+          for (let i = 0; i < today.length; i++)
           {
-            hash += today.charCodeAt[i]
+            hash += today.charCodeAt(i);
           }
           const index = hash % recipeArray.length
           setFeaturedRecipe(recipeArray[index]);
+
       }
-    });
-  }, [])
+    };
+
+    fetchFeaturedRecipe();
+
+  }, []);
   
   return (
     <>
@@ -45,26 +51,40 @@ function Home() {
           <button className="home-get-started-button">Get Started</button>
         </Link>
       </div>
-      <div className= "featured-recipe-box">
+      <div className= "featured-recipe-box-outer">
         <h1 className= "featured-recipe-title">Featured Recipe: </h1>
             {featuredRecipe ? (
-        <div className="featured-recipe">
-          <h2>{featuredRecipe.name}</h2>
+        <div className="featured-recipe-box-inner">
+          <h2 className ="fr-name">{featuredRecipe.name}</h2>
           {featuredRecipe.img && (
             <img className="recipe-img" src={featuredRecipe.img} alt={featuredRecipe.name}></img> 
           )}
-          <p><strong>Price:</strong> {featuredRecipe.price}</p>
-          <ul>
+          <p className = "fr-price"><strong className="fr-price-title">Price:</strong> {featuredRecipe.price}</p>
+          <p className = "fr-ingredients-title"><strong>Ingredients:</strong>
+          <ul className = "fr-ingredients-list">
             {featuredRecipe.ingredients?.slice(0, 3).map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
-          <p><strong>Tags:</strong> {featuredRecipe.tags?.join(', ')}</p>
+          </p>
+          <div className='fr-instructions'>
+            <h4>Instructions:</h4>
+            <ul className ="instructions">
+              {featuredRecipe.instructions
+                .split(/\d+\.\s/)
+                .filter((step) => step.trim() !== "")
+                .map((step, index) => (
+                  <div key={index}>
+                    {index + 1}. {step.trim()}
+                  </div>
+                ))}
+            </ul>
+          </div>
+          <p className ="fr-tags"><strong className ="fr-tags-title">Tags:</strong> {featuredRecipe.tags?.join(', ')}</p>
         </div>
       ) : (
-        <p>Loading featured recipe...</p>
+        <p className ="loading-fr-text">Loading featured recipe...</p>
       )}
-
       </div>
     </>
   );

@@ -80,7 +80,7 @@
 .header-nav-saved-recipes {
     grid-column: 8/9;
     font-family: 'Chewy';
-    font-size: 27px;
+    font-size: 35px;
     color: #883333;
     height: 53px;
     text-decoration: none;
@@ -156,9 +156,11 @@
 }
 /* Footer Social Media Box */
 .footer-social-media-box {
-    grid-row: 2/3;
-    display: grid;
+    /* grid-row: 2/3;
+    display: grid; */
     grid-template-columns: repeat(3, 1fr);
+    padding: 15px;
+    height: auto;
 }
 /* Footer Instagram Link */
 .footer-instagram-link {
@@ -167,6 +169,7 @@
 }
 .footer-instagram-logo {
     height: 30px;
+    margin-right: 5px;
 }
 /* Footer Facebook Link */
 .footer-facebook-link {
@@ -175,6 +178,7 @@
 }
 .footer-facebook-logo {
     height: 30px;
+    margin-right: 5px;
 }
 /* Footer X Link */
 .footer-x-link {
@@ -183,6 +187,7 @@
 }
 .footer-x-logo {
     height: 30px;
+    margin-right: 5px;
 }
 /* Footer Address */
 .footer-address {
@@ -191,10 +196,6 @@
 /* Footer Subscribe Box */
 .footer-subscribe-box {
     grid-column: 4/6;
-}
-/* Footer Subscribe Title */
-.footer-subscribe-title {
-    
 }
 /* Footer Subscribe Subtitle */
 .footer-subscribe-text {
@@ -210,7 +211,7 @@
 }
 /* Footer Subscribe Text */
 .footer-subscribe-agreement {
-    
+    font-style: italic;
 }
 /* Footer Copyright, Privacy Policy, & Terms of Service Box*/
 .footer-c-p-t-box {
