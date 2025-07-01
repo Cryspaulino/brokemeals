@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Routing components - You can see all routes below.
 import Home from './pages/Home';
-import SavedRecipes from './pages/saved_recipes';
+import SavedRecipes from './pages/Saved_Recipes';
 import Recipes from './pages/Recipes';
 import Layout from './components/Layout';
 import Signin from './pages/Signin';
