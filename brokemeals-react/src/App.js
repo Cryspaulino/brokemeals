@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Routing components - You can see all routes below.
 import Home from './pages/Home';
-import SavedRecipes from './pages/Saved_Recipes';
+import SavedRecipes from './pages/saved_recipes';
 import Recipes from './pages/Recipes';
 import Layout from './components/Layout';
 import Signin from './pages/Signin';
@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} /> {/* Default route */}
-          <Route path="Saved_Recipes" element={<SavedRecipes />} />
+          <Route path="saved_recipes" element={<SavedRecipes />} />
           <Route path="recipes" element={<Recipes />} />
           <Route path="signin" element={<Signin />} />
           <Route path = "signup" element={<Signup />} />
