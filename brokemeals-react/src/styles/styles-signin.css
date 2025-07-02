@@ -16,7 +16,7 @@
     grid-template-rows: repeat(5, auto);
     justify-self: center;
     justify-items: center;
-    width: 600px;
+    width: 550px;
     height: 625px;
     background-color: #e9e9e9;
     margin: 30px;
@@ -29,14 +29,25 @@
 /* signin title */
 .signin-title {
     grid-row: 1/2;
+    font-family: 'Chewy';
+    color: #883333;
+    font-size: 50px;
 }
 /* signin email form/box */
 .signin-email-form {
     grid-row: 2/3;
+    font-family: 'Jost';
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 30px;
+    margin-top: 0px;
 }
 /* signin email subtitle */
 .signin-email-text{
     margin: 5px;
+    font-weight: 600;
+    font-size: 20px;
 }
 /* signin email input box */
 .email-input-box {
@@ -45,6 +56,8 @@
 /* signin password subtitle */
 .signin-password-text{
     margin: 5px;
+    font-weight: 600;
+    font-size: 20px;
 }
 /* signin password input box */
 .password-input-box {
@@ -58,24 +71,35 @@
 .forgot-password-button {
     grid-row: 3/4;
     height: 30px;
+    font-family: 'Jost';
+}
+/* Google Logo */
+.google-logo {
+    margin-right: 10px;
 }
 /* google signin button */
 .google-signin-button {
     grid-row: 4/5;
     height: 45px;
-    width: 180px;
+    width: 200px;
+    font-family: 'Jost';
+    border-radius: 5px;
+    background-color: white;
 }
 /* No Account Box */
 .no-account-box {
     grid-row: 5/6;
     justify-items: center;
+    font-family: 'Jost';
 }
 /* signup text */
 .signin-signup-text {
     margin: 5px;
+    font-family: 'Jost';
 }
 /* signup button */
 .signin-signup-button {
     margin: 5px;
     height: 30px;
+    font-family: 'Jost';
 }
