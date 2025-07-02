@@ -23,10 +23,15 @@
 /* Tutorial Title */
 .tutorial-title{
     grid-row: 1/2;
+    font-family: 'Chewy';
+    color: #883333;
+    font-size: 50px;
 }
 /* Tutorial Subtitle */
 .tutorial-subtitle{
     grid-row: 2/3;
+    font-family: 'Jost';
+    font-size: 30px;
 }
 /* Tutorial Steps Box */
 .tutorial-steps-boxes{
@@ -46,14 +51,19 @@
 .tutorial-step-1-box{
     margin: 30px;
     border: solid 1px black;
+    background-color: #76c7d9;
+    padding: 10px;
 }
 /* Step 1 Title */
 .step-1-title{
-
+    font-family: 'Chewy';
+    color: #883333;
+    font-size: 40px;
+    text-shadow: 3px 3px 3px #ffffff;
 }
 /* Step 1 Text */
 .step-1-text{
-
+    font-family: 'Jost';
 }
 /* Step 1 Image */
 .step-1-image{
@@ -68,14 +78,19 @@
 .tutorial-step-2-box{
     margin: 30px;
     border: solid 1px black;
+    background-color: #76c7d9;
+    padding: 10px;
 }
 /* Step 2 Title */
 .step-2-title{
-    
+    font-family: 'Chewy';
+    color: #883333;
+    font-size: 40px;
+    text-shadow: 3px 3px 3px #ffffff;
 }
 /* Step 2 Text */
 .step-2-text{
-
+    font-family: 'Jost';
 }
 /* Step 2 Image */
 .step-2-image{
@@ -90,14 +105,19 @@
 .tutorial-step-3-box{
     margin: 30px;
     border: solid 1px black;
+    background-color: #76c7d9;
+    padding: 10px;
 }
 /* Step 3 Title */
 .step-3-title{
-
+    font-family: 'Chewy';
+    color: #883333;
+    font-size: 40px;
+    text-shadow: 3px 3px 3px #ffffff;
 }
 /* Step 3 Text */
 .step-3-text{
-
+    font-family: 'Jost';
 }
 /* Step 3 Image */
 .step-3-image{
@@ -108,9 +128,19 @@
 /* Get Started Button */
 .tutorial-go-to-recipes-button{
     grid-row: 4/5;
-    margin: 30px;
+    font-family: 'Chewy';
+    font-size: 35px;
+    color: #883333;
+    text-decoration: none;
+    text-shadow: 3px 3px 3px #ffffff;
+    background: linear-gradient(to bottom, #e28d0c, #FF5252);
+    border: #992121 solid 2px;
+    margin: 20px;
+    padding: 5px;
 }
-
+.tutorial-go-to-recipes-button:hover{
+    font-size: 36px;
+}
 
 
 
