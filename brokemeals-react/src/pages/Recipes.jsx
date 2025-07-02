@@ -125,8 +125,6 @@ function addTagToList(tag) {
     });
   }, []);
 
-
-
   return (
     <div>
       <h1 className="recipe-page-title">🍲 Recipes 🍲</h1>
