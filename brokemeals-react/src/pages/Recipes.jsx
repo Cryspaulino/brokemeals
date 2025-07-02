@@ -21,6 +21,8 @@ function Recipes() {
   const [selectedTag, setSelectedTag] = useState(null);
   // state to track the current user
   const [user, setUser] = useState(null);
+  //Hold the user's typed searched input to filter recipes by ingredients
+  const [ingredientSearch, setIngredientSearch] = useState('');
   // Navigate function to allow for rerouting :)
   const navigate = useNavigate();
   // Holds a list of tags attached to different recipes.
@@ -74,12 +76,32 @@ function addTagToList(tag) {
     setSelectedTags([]);
   }
 
-  // Initializes the constant Filtered Recipes.
-  const filteredRecipes = selectedTags.length > 0
-  ? recipes.filter((recipe) =>
-      selectedTags.every((tag) => recipe.tags?.includes(tag))
-    )
-  : recipes;
+//Kaushal:
+// Filters the list of recipes based on selected tags and searched ingredients.
+// A recipe will be included if:
+// 1. It contains all selected tags (or no tags are selected), AND
+// 2. It contains ALL ingredients typed into the search bar.
+//    - The user can enter multiple ingredients separated by commas.
+//    - Each ingredient in the search must be found in the recipe's ingredient list (partial matches will be allowed).
+  const filteredRecipes = recipes.filter((recipe) => {
+  const matchesTags =
+    selectedTags.length === 0 ||
+    selectedTags.every((tag) => recipe.tags?.includes(tag));
+
+  const matchesIngredient =
+  ingredientSearch.trim() === '' ||
+  ingredientSearch
+    .toLowerCase()
+    .split(',')
+    .map((term) => term.trim())
+    .every((searchTerm) =>
+      recipe.ingredients?.some((ingredient) =>
+        ingredient.toLowerCase().includes(searchTerm)
+      )
+    );
+
+  return matchesTags && matchesIngredient;
+});
 
   // Creates auth and unsubscribe variables using firebase methods
   // This allows us to track the current user
@@ -128,14 +150,28 @@ function addTagToList(tag) {
   return (
     <div>
       <h1 className="recipe-page-title">🍲 Recipes 🍲</h1>
+      <div className="ingredient-search-bar">
+      <input
+      type="text"
+      placeholder="Search by ingredient..."
+      value={ingredientSearch}
+      onChange={(e) => setIngredientSearch(e.target.value)}
+      className="ingredient-input"
+      />
+      </div>
       <div className ="main-content">
         <div className="recipe-list">
-          {filteredRecipes.length > 0 ? (
+          {recipes.length === 0 ? (
             // If there is at least one recipe in the array, render them using map. Otherwise, show a loading message.
             // Loop through the recipes array and return 1 div per recipe.
-        
+            //Kaushal:Show loading message while waiting for recipes to load from Firebase
+            <p className="loading-recipes-text">Loading recipes...</p>
+          ): filteredRecipes.length === 0? (
+            //Kaushal:  Show this message if no recipes match the ingredient search or selected tags
+            <p className="loading-recipes-text">No recipes found with those ingredients</p>
+          ):(
+            //Kaushal:  Render each filtered recipe card
             filteredRecipes.map((recipe) => (
-          
               // Each recipe is a div with a unique key, which is the recipe's id. Allows React to keep track of each recipe.
               // I've added "className" = "recipe-card" to each recipe div for styling purposes. All data is shown for now.
               // Joyce can style these cards.
@@ -181,8 +217,6 @@ function addTagToList(tag) {
               
             </div>
             ))
-            ) : (
-            <p className = "loading-recipes-text">Loading recipes...</p>
           )}
         </div>
         <div className="tag-buttons-box">
