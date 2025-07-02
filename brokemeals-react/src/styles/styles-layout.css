@@ -63,6 +63,9 @@
     border: #992121 solid 2px;
     margin: 5px;
 }
+.header-nav-home:hover{
+    font-size: 36px;
+}
 /* Recipes Link */
 .header-nav-recipes {
     grid-column: 7/8;
@@ -75,6 +78,9 @@
     background: linear-gradient(to bottom, #e28d0c, #FF5252);
     border: #992121 solid 2px;
     margin: 5px;
+}
+.header-nav-recipes:hover{
+    font-size: 36px;
 }
 /* Saved Recipes Link */
 .header-nav-saved-recipes {
@@ -90,11 +96,14 @@
     margin: 5px;
     padding: 1.2px;
 }
+.header-nav-saved-recipes:hover{
+    font-size: 36px;
+}
 /* Sign In Link */
 .header-sign-in {
     grid-column: 9/10;
-    font-family: 'Ribeye';
-    font-size: 20px;
+    font-family: 'Jost';
+    font-size: 23px;
     color: #ffffff;
     height: 53px;
     width: 100px;
@@ -104,6 +113,9 @@
     border: #636363 solid 2px;
     margin: 5px;
     padding: 6px;
+}
+.header-sign-in:hover{
+    font-size: 24px;
 }
 /* Sign Out Link */
 .header-logout {
@@ -141,7 +153,7 @@
 .footer-logo-and-social-media-box {
     grid-column: 1/2;
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     justify-items: center;
 }
 /* Footer Logo */
@@ -161,6 +173,7 @@
     grid-template-columns: repeat(3, 1fr);
     padding: 15px;
     height: auto;
+    justify-content: center;
 }
 /* Footer Instagram Link */
 .footer-instagram-link {
@@ -171,6 +184,9 @@
     height: 30px;
     margin-right: 5px;
 }
+.footer-instagram-logo:hover{
+    height: 31px;
+}
 /* Footer Facebook Link */
 .footer-facebook-link {
     grid-column: 2/3;
@@ -179,6 +195,9 @@
 .footer-facebook-logo {
     height: 30px;
     margin-right: 5px;
+}
+.footer-facebook-logo:hover{
+    height: 31px;
 }
 /* Footer X Link */
 .footer-x-link {
@@ -189,9 +208,17 @@
     height: 30px;
     margin-right: 5px;
 }
+.footer-x-logo:hover{
+    height: 31px;
+}
 /* Footer Address */
 .footer-address {
     grid-column: 2/4;
+    font-family: 'Jost';
+    font-size: 26px;
+    color: #000000;
+    text-align: center;
+    margin: 5px;
 }
 /* Footer Subscribe Box */
 .footer-subscribe-box {
@@ -199,19 +226,25 @@
 }
 /* Footer Subscribe Subtitle */
 .footer-subscribe-text {
-    
+    font-family: 'Jost';
+    font-size: 26px;
+    color: #000000;
+    width: 500px;
+    margin: 5px;
 }
 /* Footer Subscribe Input */
 .footer-subscribe-input {
-    
+    font-family: 'Jost';
+    width: 270px;
 }
 /* Footer Subscribe Button */
 .footer-subscribe-button {
-    
+    font-family: 'Jost';
 }
 /* Footer Subscribe Text */
 .footer-subscribe-agreement {
     font-style: italic;
+    font-family: 'Jost';
 }
 /* Footer Copyright, Privacy Policy, & Terms of Service Box*/
 .footer-c-p-t-box {
@@ -224,10 +257,13 @@
 }
 .footer-copyright {
     grid-column: 1/2;
+    font-family: 'Jost';
 }
 .footer-privacy-policy {
     grid-column: 2/3;
+    font-family: 'Jost';
 }
 .footer-terms-of-service {
     grid-column: 3/4;
+    font-family: 'Jost';
 }

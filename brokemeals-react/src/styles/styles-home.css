@@ -13,32 +13,44 @@
 /* Home Heading Text Box */
 .home-heading-box {
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
     justify-items: center;
 }
 /* Home Heading */
 .home-heading {
     grid-row: 1/2;
+    font-family: 'Chewy';
+    font-size: 60px;
+    color: #883333;
+    margin-top: 20px;
 }
 /* Home Subheading */
 .heading-paragraph {
     grid-row: 2/3;
-}
-/* Home Get Started Link */
-.home-get-started-links {
-    grid-row: 3/4;
+    font-family: 'Jost';
+    font-size: 30px;
+    color: #551010;
+    margin: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 850px;
 }
 /* Home Get Started Button */
 .home-get-started-button {
     font-family: 'Chewy';
     font-size: 35px;
     color: #883333;
-    height: 53px;
+    height: 55px;
     text-decoration: none;
     text-shadow: 3px 3px 3px #ffffff;
     background: linear-gradient(to bottom, #e28d0c, #FF5252);
     border: #992121 solid 2px;
     margin: 5px;
+    margin-bottom: 20px;
+}
+.home-get-started-button:hover{
+    font-size: 36px;
+    color: #883333;
 }
 /* Home Heading Links Box */
 .home-heading-links {
