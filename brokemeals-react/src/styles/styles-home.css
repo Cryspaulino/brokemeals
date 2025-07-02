@@ -96,6 +96,9 @@
 .featured-recipe-title {
     grid-row: 1/2;
     grid-column: 1/3;
+    font-family: 'Chewy';
+    font-size: 60px;
+    color: #883333;
 }
 /* Featured Recipe Inner Box */
 .featured-recipe-box-inner {
@@ -113,6 +116,8 @@
 .fr-name{
     grid-column: 1/3;
     grid-row: 1/2;
+    font-family: 'Jost';
+    color: black;
 }
 /* Featured Recipe Img */
 .recipe-img{
@@ -120,20 +125,38 @@
     grid-column: 1/2;
 }
 /* Featured Recipe Price */
+.fr-price-title{
+    font-family: 'Chewy';  
+    color: #883333;
+}
 .fr-price{
     grid-column: 1/2;
     grid-row: 5;
+    font-family: 'Jost';
     position: relative;
+}
+
+.fr-ingredients-title{
+    font-family: 'Chewy';  
+    color: #883333;
+}
+
+.fr-instructions-title{
+    font-family: 'Chewy';  
+    color: #883333;
 }
 
 .fr-instructions{
     grid-column: 1;
     grid-row: 4;
+    font-family: 'Jost';
 }
 
 /* Featured Recipe Ingredients Title */
 .fr-ingredients-title{
-    margin-top: 40px;    
+    margin-top: 40px;
+    font-family: 'Chewy';  
+    color: #883333;  
 }
 
 .fr-ingredients-title strong{
@@ -143,17 +166,22 @@
 /* Featured Recipe Ingredients List */
 .fr-ingredients-list{
     grid-row: 2/3;
+    font-family: 'Jost';
+    color: black;
 }
 /* Featured Recipe Tags Title */
 .fr-tags-title{
     grid-row: 2/3;
+    font-family: 'Chewy';
+    color: #883333;
 }
 /* Featured Recipe Tags */
 .fr-tags{
     grid-column: 1/2;
     grid-row: 6;
+    font-family: 'Jost';
 }
 /* "Loading Featured Recipe" Text */
 .loading-fr-text{
-
+    font-family: 'Jost';
 }
