@@ -33,7 +33,7 @@
     margin: 10px;
     margin-bottom: 20px;
     text-align: center;
-    width: 700px;
+    width: 850px;
 }
 /* Home Get Started Button */
 .home-get-started-button {
@@ -47,6 +47,10 @@
     border: #992121 solid 2px;
     margin: 5px;
     margin-bottom: 20px;
+}
+.home-get-started-button:hover{
+    font-size: 36px;
+    color: #883333;
 }
 /* Home Heading Links Box */
 .home-heading-links {
