@@ -94,7 +94,7 @@
 }
 
 .featured-recipe-box-inner img{
-    width: 600px;
+    max-width: 500px;
 }
 
 /* Featured Recipe Name */
