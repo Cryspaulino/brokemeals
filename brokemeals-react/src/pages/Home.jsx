@@ -39,7 +39,7 @@ function Home() {
   return (
     <>
       <div className= "home-heading-box">
-        <h1 className= "home-heading">Welcome to broke meals!</h1>
+        <h1 className= "home-heading">Welcome to Broke Meals!</h1>
         <h3 className= "heading-paragraph">
           We are a group of college students that want to help you get through college while eating healthy and saving money!
           Click the button below to get started!
@@ -60,7 +60,7 @@ function Home() {
             <img className="recipe-img" src={featuredRecipe.img} alt={featuredRecipe.name}></img> 
           )}
           <p className = "fr-price"><strong className="fr-price-title">Price:</strong> {featuredRecipe.price}</p>
-          <p className = "fr-ingredients-title"><strong>Ingredients:</strong>
+          <p className = "fr-ingredients-title"><strong >Ingredients:</strong>
           <ul className = "fr-ingredients-list">
             {featuredRecipe.ingredients?.slice(0, 3).map((item, index) => (
               <li key={index}>{item}</li>
@@ -68,7 +68,7 @@ function Home() {
           </ul>
           </p>
           <div className='fr-instructions'>
-            <h4>Instructions:</h4>
+            <h4 className='fr-instructions-title'>Instructions:</h4>
             <ul className ="instructions">
               {featuredRecipe.instructions
                 .split(/\d+\.\s/)

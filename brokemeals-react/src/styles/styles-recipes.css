@@ -14,6 +14,9 @@
 .recipe-page-title{
     text-align: center;
     padding-top: 20px;
+    font-family: 'Chewy';
+    color: #883333;
+    font-size: 50px;
 }
 
 /* Main Content */
@@ -66,15 +69,19 @@
   padding: 5px 10px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease; 
+  font-family: 'Jost';
 }
 .save-button:hover {
   background-color: #007bff; 
   color: white;
+  font-family: 'Jost';
 }
 
 /* Recipe Name */
 .recipe-name{
     grid-column: 1/3;
+    font-family: 'Chewy';
+    color: #883333;
 }
 
 /* Recipe Image */
@@ -90,33 +97,34 @@
 
 /* Price */
 .price{
-
+    font-family: 'Jost';
 }
 
 /* Recipe Ingredients Title */
 .recipe-ingredients-title{
-    
+    font-family: 'Jost';
 }
 
 /* Ingredient List */
 .ingredient-list{
-
+    font-family: 'Jost';
 }
 
 /* Recipe Tags Title */
 .recipe-tags{
     font-style: italic;
     grid-column: 1;
+    font-family: 'Jost';
 }
 
 /* Tag List */
 .tag-list{
-
+    font-family: 'Jost';
 }
 
 /* Loading Recipes Text */
 .loading-recipes-text{
-    
+    font-family: 'Jost';   
 }
 
 
@@ -127,7 +135,7 @@
 
 /* Tag Buttons Box */
 .tag-buttons-box{
-
+    font-family: 'Jost';
 }
 /* Tag Buttons Dropdown */
 .tag-buttons-dropdown{
@@ -228,4 +236,20 @@
 
 button{
     margin: 5px;
+}
+
+.ingredient-search-bar {
+  display: flex;
+  justify-content: left;
+  margin: 20px 0;
+}
+
+.ingredient-input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  margin-left: 30px; 
 }
