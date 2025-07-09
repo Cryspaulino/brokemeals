@@ -61,13 +61,20 @@
     font-size: 40px;
     text-shadow: 3px 3px 3px #ffffff;
 }
+/* Step 1 Subtitle */
+.step-1-subtitle{
+    font-family: 'Jost';
+    font-weight: bold;
+    color: #b86500;
+    text-shadow: 3px 3px 3px #ffffff;
+}
 /* Step 1 Text */
 .step-1-text{
     font-family: 'Jost';
 }
 /* Step 1 Image */
 .step-1-image{
-
+    width: 100%;
 }
 
 /* Tutorial Step 2 */
@@ -88,13 +95,20 @@
     font-size: 40px;
     text-shadow: 3px 3px 3px #ffffff;
 }
+/* Step 2 Subtitle */
+.step-2-subtitle{
+    font-family: 'Jost';
+    font-weight: bold;
+    color: #b86500;
+    text-shadow: 3px 3px 3px #ffffff;
+}
 /* Step 2 Text */
 .step-2-text{
     font-family: 'Jost';
 }
 /* Step 2 Image */
 .step-2-image{
-
+    width: 100%;
 }
 
 /* Tutorial Step 3 */
@@ -115,14 +129,22 @@
     font-size: 40px;
     text-shadow: 3px 3px 3px #ffffff;
 }
+/* Step 3 Subtitle */
+.step-3-subtitle{
+    font-family: 'Jost';
+    font-weight: bold;
+    color: #b86500;
+    text-shadow: 3px 3px 3px #ffffff;
+}
 /* Step 3 Text */
 .step-3-text{
     font-family: 'Jost';
 }
 /* Step 3 Image */
 .step-3-image{
-
+    width: 100%;
 }
+
 
 
 /* Get Started Button */
@@ -143,12 +165,15 @@
 }
 
 
+/* Other */
+/* Other */
 
-
-
-
-
-
+.bold-word{
+    font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
 
 
 
