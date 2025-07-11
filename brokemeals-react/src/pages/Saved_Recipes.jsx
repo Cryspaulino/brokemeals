@@ -85,7 +85,7 @@ function SavedRecipes() {
                         alt={recipe.name}
                       ></img>
                     )}
-                    <div className="recipe-info-box">
+                    {/* <div className="recipe-info-box">
                       <p className="price">
                         <strong>Price:</strong> {recipe.price}
                       </p>
@@ -101,7 +101,7 @@ function SavedRecipes() {
                         <strong>Tags: </strong>
                         {recipe.tags?.join(", ")}
                       </p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               ))
