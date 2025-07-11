@@ -8,12 +8,6 @@ import "../styles/styles-layout.css";
 
 function Layout() {
   const { isSignedIn, signOut } = useAuth();
-  const [subscribe, setSubscription] = useState(false);
-
-  const handleSubscribe = () => {
-    console.log("User subscribed");
-    setSubscription(true);
-  };
 
   return (
     <>
@@ -104,20 +98,17 @@ function Layout() {
         <h3 className="footer-address">Address: 123 Main St, Anytown, USA</h3>
         <div className="footer-subscribe-box">
           <h3 className="footer-subscribe-text">
-            Enter your email to subscibe to our newsletter below:
+            Enter your email to subscribe to our newsletter below:
           </h3>
+            <p className="footer-subscribe-agreement">
+            By subscribing, you agree to receive emails and acknowledge our Privacy Policy
+            </p>
           <input
             className="footer-subscribe-input"
             type="email"
             placeholder="Enter your email"
           />
-          <button className="footer-subscribe-button" onClick={handleSubscribe}> Subscribe </button>
-
-          {subscribe && (
-            <p className="footer-subscribe-agreement">
-            By subscribing, you agree to receive emails from us and acknowledge our Privacy Policy
-            </p>
-          )}
+          <button className="footer-subscribe-button"> Subscribe </button>
           
         </div>
 
