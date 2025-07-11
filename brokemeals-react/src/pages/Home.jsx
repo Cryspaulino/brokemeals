@@ -5,9 +5,11 @@ import React, { useEffect, useState } from 'react';
 import {onValue} from 'firebase/database'
 import {database} from '../firebase/firebaseConfig'
 import { get, ref, child } from "firebase/database";
+import { useNavigate } from "react-router-dom";
 
 
 function Home() {
+  const navigate = useNavigate();
   const [featuredRecipe, setFeaturedRecipe] = useState(null)
   useEffect(() => {
     const fetchFeaturedRecipe = async () => {
@@ -51,7 +53,15 @@ function Home() {
           <button className="home-get-started-button">Get Started</button>
         </Link>
       </div>
-      <div className= "featured-recipe-box-outer">
+
+    <div 
+      onClick={() => navigate(`/recipe?id=${featuredRecipe.id}`)}
+    >
+      <div
+        className="recipe-card"
+        onClick={() => navigate(`/recipe?id=${featuredRecipe.id}`)}
+        style={{ cursor: 'pointer' }}
+      >
         <h1 className= "featured-recipe-title">Featured Recipe: </h1>
             {featuredRecipe ? (
         <div className="featured-recipe-box-inner">
@@ -60,7 +70,7 @@ function Home() {
             <img className="recipe-img" src={featuredRecipe.img} alt={featuredRecipe.name}></img> 
           )}
           <p className = "fr-price"><strong className="fr-price-title">Price:</strong> {featuredRecipe.price}</p>
-          <p className = "fr-ingredients-title"><strong >Ingredients:</strong>
+          <p className = "fr-ingredients-title"><strong >Ingredients:</strong> 
           <ul className = "fr-ingredients-list">
             {featuredRecipe.ingredients?.slice(0, 3).map((item, index) => (
               <li key={index}>{item}</li>
@@ -85,6 +95,7 @@ function Home() {
       ) : (
         <p className ="loading-fr-text">Loading featured recipe...</p>
       )}
+      </div>
       </div>
     </>
   );

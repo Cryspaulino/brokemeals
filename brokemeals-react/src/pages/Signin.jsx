@@ -75,18 +75,22 @@ function Signin() {
   // Save User info to RealtimeDatabase
   const saveUserToDB = async (uid, email) => {
     try {
-      // Use Firebase's 'set' to write user data under their unique UID.
-      await set(ref(database, "users/" + uid), {
-        email: email,
-        createdAt: new Date().toISOString(), // ISO timestamp for creation time in our database.
-      });
-      // Log the success to the console.
-      console.log("User saved to database successfully.");
-    } catch (error) {
-      // Log any errors that occur while writing to the database.
-      console.error("Error saving user to database:", error.message);
-    }
-  };
+      if (ref(database, "users/" + uid)) {
+        console.log("User exists. Continuing login.")
+      }
+      else {
+        // Use Firebase's 'set' to write user data under their unique UID.
+        await set(ref(database, "users/" + uid), {
+          email: email,
+          createdAt: new Date().toISOString(), // ISO timestamp for creation time in our database.
+        });
+        // Log the success to the console.
+        console.log("User saved to database successfully.");
+      }} catch (error) {
+        // Log any errors that occur while writing to the database.
+        console.error("Error saving user to database:", error.message);
+      }
+    };
 
   return (
     <div className="signin-container">

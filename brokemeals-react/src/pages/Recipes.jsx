@@ -153,7 +153,7 @@ function addTagToList(tag) {
       <div className="ingredient-search-bar">
       <input
       type="text"
-      placeholder="Search by ingredient..."
+      placeholder="Search by ingredient (separate with commas)"
       value={ingredientSearch}
       onChange={(e) => setIngredientSearch(e.target.value)}
       className="ingredient-input"
