@@ -115,7 +115,7 @@ function SingleRecipe() {
         </div>
       </div>
       {/* Return to Recipes page. */}
-      <div classname="backtorecipes">
+      <div className="backtorecipes">
         <a href="./Recipes">Go back to all recipes</a>
       </div>
     </main>
