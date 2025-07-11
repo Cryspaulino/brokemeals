@@ -10,3 +10,46 @@
     --background-color: #C4BEBB;
 }
 
+.saved-recipe-list{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.saved-recipe-card{
+    width: 450px;
+    height: 600px;
+    margin: 40px;
+    border: solid 1px black;
+    border-radius: 25px;
+    box-shadow: 2px 5px 10px 2px rgb(172, 172, 172);
+    padding-top: 30px;
+    transition: box-shadow 0.3s ease;
+    justify-items: center;
+}
+
+.saved-recipe-card:hover{
+    transform: scale(1.05);
+    transition: 0.3s ease;
+    box-shadow: 2px 2px 15px #32ACC7;
+}
+
+.saved-recipe-name{
+    font-family: 'Chewy';
+    color: #883333;
+}
+
+.saved-recipe-img{
+    grid-column: 1/2;
+    width: 400px;
+    height: auto;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 1px 5px 5px grey;
+}
+
+
+.saved-recipe-card img{
+    width: 300px;
+}

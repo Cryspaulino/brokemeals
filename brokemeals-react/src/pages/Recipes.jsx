@@ -211,7 +211,6 @@ function addTagToList(tag) {
                 </ul>
                 <p className ="recipe-tags"> <strong>Tags: </strong>{recipe.tags?.join(', ')}</p>
 
-                
                 </div>
               </div>
               
@@ -225,6 +224,13 @@ function addTagToList(tag) {
               {selectedTag || "Filter"}
             </Dropdown.Toggle>
 
+            {selectedTags.length > 0 && (
+            // When clicked, we call the clearTagList function.
+            <button onClick={clearTagList} className="clear-filters-button">
+              Clear Filters
+            </button>
+          )}
+
             <Dropdown.Menu>
               {tags.map((tag) => (
                 <Dropdown.Item
@@ -237,17 +243,11 @@ function addTagToList(tag) {
               ))}
             </Dropdown.Menu>
           </Dropdown>
-          {selectedTags.length > 0 && (
-            // When clicked, we call the clearTagList function.
-            <button onClick={clearTagList} className="clear-filters-button">
-              Clear Filters
-            </button>
-          )}
+          
         </div>
       </div>
     </div>
   );
-
 }
 
 export default Recipes;

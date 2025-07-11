@@ -55,9 +55,9 @@ function SavedRecipes() {
     // This is the same HTML as used in Recipes.jsx.
     return (
       <div>
-        <h1 className="recipe-page-title">🍲 Recipes 🍲</h1>
-        <div className="main-content">
-          <div className="recipe-list">
+        <h1 className="recipe-page-title">🍲 Saved Recipes 🍲</h1>
+        <div className="saved-main-content">
+          <div className="saved-recipe-list">
             {loadedFavorites.length > 0 ? (
               // If there is at least one recipe in the array, render them using map. Otherwise, show a loading message.
               // Loop through the recipes array and return 1 div per recipe.
@@ -70,38 +70,21 @@ function SavedRecipes() {
 
                 // Added onClick functionality, users will be rerouted to the SingleRecipe page on click
 
-                <div key={recipe.id} className="recipe-card-wrapper">
+                <div key={recipe.id} className="saved-recipe-card-wrapper">
                   <div
                     key={recipe.id}
-                    className="recipe-card"
+                    className="saved-recipe-card"
                     onClick={() => navigate(`/recipe?id=${recipe.id}`)}
                     style={{ cursor: "pointer" }}
                   >
-                    <h2 className="recipe-name">{recipe.name}</h2>
+                    <h2 className="saved-recipe-name">{recipe.name}</h2>
                     {recipe.img && (
                       <img
-                        className="recipe-img"
+                        className="saved-recipe-img"
                         src={recipe.img}
                         alt={recipe.name}
                       ></img>
                     )}
-                    {/* <div className="recipe-info-box">
-                      <p className="price">
-                        <strong>Price:</strong> {recipe.price}
-                      </p>
-
-                      <h4 className="recipe-ingredients-title">Ingredients:</h4>
-                      <ul className="ingredient-list">
-                        {recipe.ingredients?.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                      <p className="recipe-tags">
-                        {" "}
-                        <strong>Tags: </strong>
-                        {recipe.tags?.join(", ")}
-                      </p>
-                    </div> */}
                   </div>
                 </div>
               ))
