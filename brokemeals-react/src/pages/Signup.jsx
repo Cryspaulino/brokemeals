@@ -38,6 +38,7 @@ function Signup() {
   return (
     <div className="signup-container">
       <h1 className ="signup-title">Sign Up</h1>
+      <div className = 'signup-form-box'>
       <form onSubmit={handleSignup}>
         <p className ="signup-email-text">Email:</p>
         <input
@@ -58,7 +59,8 @@ function Signup() {
           required
         /><br />
         <button type="submit" className="signup-submit-button">Sign Up</button>
-      </form>
+        </form>
+      </div>
       <p className = "signup-redirect-text">Already have an account? <a className ="signup-redirect" href="/Signin">Sign In</a></p>
       <p className ="signup-agreement-text">By signing up, you agree to our Terms of Service and Privacy Policy</p>
     </div>

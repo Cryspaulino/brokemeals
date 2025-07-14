@@ -116,14 +116,15 @@ function Signin() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+        <button onClick={handleForgotPassword} className="forgot-password-button">
+        Forgot Password
+      </button>
         <br />
         <button type="submit" className="signin-button">
           Sign In
         </button>
       </form>
-      <button onClick={handleForgotPassword} className="forgot-password-button">
-        Forgot Password
-      </button>
+      
       <button className="google-signin-button" onClick={signInWithGoogle}>
         <img className ='google-logo' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAnFBMVEVHcEzqQzXqQjXqQzXqQzXqQzXrRzPqRDTqQzXqQzXqQzXqQzXqOzbqQzX8vQPziCL7vAX8vAT3pRX7vAXsVzD7vAVChfRChfRChPRChfRChfT7vAVBhvJChfQ8m5BChfRChfRYq0wxqFPXuCEzqFKqsjUZp1Y0qFM9qVFDg/o0qFM0qFMzqFA8lLxDg/1ChfQ0qFM0qFMzqFE3onsP391uAAAAM3RSTlMAOYXD7f9hFN+ZWlX/bev/Mv//hv/CnZMe/0jGX2US7Nf/j//////KXoPe/DD//7+57UCtLMrnAAAA5ElEQVR4AX3QAxbEQBBF0T+2rdjG/vc23RXj5MZ5YaM0Gk+ms9l0Mh6hbc5CYTpH3WI5a1guUBrNOhYDbVw+c1aYrFaTZkPxvjXIpt7mW0oTlHYo7Q/bonUcT6fzbDtDr8uJuY7R63biit+6Pyr3J/a87ZF71b1x4j698TsUf0OP/eYfJIBAlIiYv5N+RVbQcKco8EFQNU1DAzURwF43WDS7N94BWLw1qv0iTzAORde1QDzTD3gLwQlaIVKUKGZbqgJIwu7TGlL+HyhqxxclwWne7Caos+JaU9DmKWbsurGpVHf9AR6XJvBaxWh+AAAAAElFTkSuQmCC' alt="Google Logo" />
         Sign In with Google
