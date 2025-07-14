@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { database } from "../firebase/firebaseConfig";
 // Import methods from Firebase to reference a path and listen for any changes we make to the databse.
-import { ref, onValue } from "firebase/database";
+import { ref as dbRef, onValue, set } from "firebase/database";
 // Import methods from Firebase to handle user authentication
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -54,6 +54,7 @@ function Recipes() {
   // Initializes the "selectedTags" array to be empty. It will hold na array of recipe objects that we fetch from Firebase.
   // The "setSelectedTags" function will be used to update the state of the "selectedTags" array.
   const [selectedTags, setSelectedTags] = useState([]);
+  const [savedRecipes, setSavedRecipes] = useState([]);
 
   // This function adds a selected tag to the SelectedTags list.
   // This is kind of weird, so I'll explain line by line.
@@ -119,7 +120,7 @@ function addTagToList(tag) {
   useEffect(() => {
     // Ref() creats a reference to the roof of our databse, you can see this on our Realtime Databse page.
     // This is where our recipes like "0, 1, 2, 3" are stored.
-    const recipesRef = ref(database, "/"); // read all root-level recipes
+    const recipesRef = dbRef(database, "/"); // read all root-level recipes
 
     // Sets up a listener and triggers everytime "/" or the root, changes and gives us a snapshot of the data.
     // In the case below we are listening to ALL OF THE DATA in the root of our database. I did this to test that our
@@ -146,6 +147,29 @@ function addTagToList(tag) {
       }
     });
   }, []);
+
+    // Fetch saved recipes from Firebase when user changes
+  useEffect(() => {
+    if (user) {
+      const favRef = dbRef(database, `users/${user.uid}/favorites`);
+      onValue(favRef, (snapshot) => {
+        const data = snapshot.val();
+        setSavedRecipes(data || []);
+      });
+    }
+  }, [user]);
+
+  const handleSaveRecipe = (recipe, e) => {
+    e.stopPropagation();
+    if (!user) return; // Optionally prompt login
+    const favRef = dbRef(database, `users/${user.uid}/favorites`);
+    // Add recipe.id to savedRecipes and update Firebase
+    const updated = savedRecipes.includes(recipe.id)
+      ? savedRecipes
+      : [...savedRecipes, recipe.id];
+    set(favRef, updated);
+    setSavedRecipes(updated);
+  };
 
   return (
     <div>
@@ -189,12 +213,11 @@ function addTagToList(tag) {
               >
               <button
               className="save-button"
-              onClick={(e) => {
-                e.stopPropagation();
-                SaveFavoriteRecipe(recipe);
-              }}
-                > Save Recipe
-                </button>
+              onClick={(e) => handleSaveRecipe(recipe, e)}
+              disabled={savedRecipes.includes(recipe.id)}
+            >
+              {savedRecipes.includes(recipe.id) ? "Recipe Saved" : "Save Recipe"}
+            </button>
 
                 <h2 className="recipe-name">{recipe.name}</h2>
                 {recipe.img && (
