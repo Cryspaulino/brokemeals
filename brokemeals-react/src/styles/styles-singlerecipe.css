@@ -65,24 +65,12 @@
 /* Recipe Tags Box */
 .recipe-price-box{
     grid-column: 2;
-    margin-left: 30px;
 }
-/* Recipe Price */
-.recipe-price{
 
-}
 /* Recipe Tags Box */
 .recipe-tags-box{
     grid-column: 2;
     padding: 10px;
-}
-/* Recipe Tags Title */
-.tags-title{
-
-}
-/* Recipe Tags */
-.tags{
-
 }
 
 /* Recipe Ingredients Box */
@@ -94,22 +82,12 @@
 .ingredients-title{
     margin-top: 20px;
 }
-/* Recipe Ingredients */
-.ingredients{
 
-}
 /* Recipe Instructions Box */
 .recipe-instructions-box{
     grid-column: 2/3;
 }
-/* Recipe Instructions Title */
-.instructions-title{
-    
-}
-/* Recipe Instructions */
-.instructions{
 
-}
 /* Go Back To All Recipes Button */
 .backtorecipes{
     padding: 10px;

@@ -98,18 +98,14 @@ function SingleRecipe() {
               ))}
           </ul>
           {/* Tags (there is a lambda function inside the tags ul. It maps out the tags, and then puts each individual tag as its own li element.) */}
-          <div className="recipe-tags-box">
-            <h3 className="tags-title">Tags:</h3>
-            <ul className="tags">
-              {recipe.tags?.map((tag, index) => (
-                <li key={index}>{tag}</li>
-              ))}
-            </ul>
-          </div>
           <div className="recipe-price-box">
             <p className="recipe-price">
               <strong>Price:</strong> {recipe.price}
             </p>
+          </div>
+          <div className="recipe-tags-box">
+            <h3 className="tags-title"></h3>
+            <p className ="recipe-tags"> <strong>Tags: </strong>{recipe.tags?.join(', ')}</p>
           </div>
         </div>
       </div>
