@@ -118,7 +118,7 @@ function Layout() {
             Meals
           </p>
           <Link to="/privacy-policy" className="footer-privacy-policy">Privacy Policy</Link>
-          <p className="footer-terms-of-use">Terms of Service</p>
+          <Link to="/terms-of-service" className="footer-terms-of-use">Terms of Service</Link>
         </div>
       </footer>
     </>
