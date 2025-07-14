@@ -95,7 +95,7 @@ function Layout() {
             </a>
           </div>
         </div>
-        <h3 className="footer-address">Address: 123 Main St, Anytown, USA</h3>
+        {/* <h3 className="footer-address">Address: 123 Main St, Anytown, USA</h3> */}
         <div className="footer-subscribe-box">
           <h3 className="footer-subscribe-text">
             Enter your email to subscribe to our newsletter below:
