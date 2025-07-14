@@ -153,20 +153,28 @@ function addTagToList(tag) {
     if (user) {
       const favRef = dbRef(database, `users/${user.uid}/favorites`);
       onValue(favRef, (snapshot) => {
-        const data = snapshot.val();
-        setSavedRecipes(data || []);
+        let data = snapshot.val();
+        if (Array.isArray(data)) {
+          setSavedRecipes(data)
+        } else if (data && typeof data == "object") {
+          setSavedRecipes(Object.values(data));
+        } else {
+            setSavedRecipes([]);
+        }
       });
     }
   }, [user]);
 
   const handleSaveRecipe = (recipe, e) => {
     e.stopPropagation();
-    if (!user) return; // Optionally prompt login
+    if (!user) return;
     const favRef = dbRef(database, `users/${user.uid}/favorites`);
     // Add recipe.id to savedRecipes and update Firebase
-    const updated = savedRecipes.includes(recipe.id)
+    let updated = savedRecipes.includes(recipe.id)
       ? savedRecipes
       : [...savedRecipes, recipe.id];
+    // Remove undefined/null just in case
+    updated = updated.filter((id) => id !== undefined && id !== null);
     set(favRef, updated);
     setSavedRecipes(updated);
   };
