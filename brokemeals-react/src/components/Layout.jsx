@@ -117,8 +117,8 @@ function Layout() {
             Beus, Ili, Kafle, Nelson, Paulino Cabrera, Poole &copy; 2025 Broke
             Meals
           </p>
-          <p className="footer-privacy-policy">Privacy Policy</p>
-          <p className="footer-terms-of-use">Terms of Service</p>
+          <Link to="/privacy-policy" className="footer-privacy-policy">Privacy Policy</Link>
+          <Link to="/terms-of-service" className="footer-terms-of-use">Terms of Service</Link>
         </div>
       </footer>
     </>
