@@ -70,7 +70,7 @@ function SingleRecipe() {
             SaveFavoriteRecipe(recipe);
           }}
         >
-          Save Recipe
+          Save/Unsave Recipe
         </button>
         <div className="recipe-ingredients-box">
 

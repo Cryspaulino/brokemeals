@@ -1,5 +1,5 @@
 import { getAuth } from "firebase/auth";
-import { ref, get, update } from "firebase/database";
+import { ref, get, update, remove } from "firebase/database";
 import { database } from "../firebase/firebaseConfig";
 
     export function SaveFavoriteRecipe(recipe) {
@@ -33,7 +33,10 @@ import { database } from "../firebase/firebaseConfig";
                 alert(`${recipe.name} saved to favorites!`));
             }
             else {
-                alert("Recipe already saved!")
+                const removeValue = recipe.id;
+                const updatedFavorites = currentFavorites.filter(item => item !== removeValue);
+                update (userRef, { favorites: updatedFavorites }).then(() => 
+                alert(`${recipe.name} removed from favorites!`));
             }
         });
     }
