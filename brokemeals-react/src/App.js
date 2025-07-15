@@ -9,6 +9,10 @@ import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import SingleRecipe from './pages/SingleRecipe';
 import Tutorial from './pages/Tutorial';
+import PrivacyPolicy from './pages/Privacy_Policy';
+import TermsOfService from './pages/Terms_of_Service';
+
+
 
 
 function App() {
@@ -24,6 +28,8 @@ function App() {
           <Route path = "signup" element={<Signup />} />
           <Route path = "/recipe" element={<SingleRecipe />} />
           <Route path = "/tutorial" element={<Tutorial />} />
+          <Route path = "/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path = "/terms-of-service" element={<TermsOfService />} />
         </Route>
       </Routes>
     </Router>

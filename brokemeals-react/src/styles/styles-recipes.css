@@ -125,7 +125,8 @@
 
 /* Loading Recipes Text */
 .loading-recipes-text{
-    font-family: 'Jost';   
+    font-family: 'Jost';
+    margin: 15px;   
 }
 
 
@@ -164,7 +165,7 @@
 
 /* Clear Filters Button */
 .clear-filters-button{
-    margin: 20px;
+    margin: 5px;
     border-radius: 10px;
 }
 
